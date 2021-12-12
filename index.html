@@ -7,6 +7,17 @@
 
   body {
     background-color: #1f1c3b;
+    /* height: 100vh;  do we need this? */
+  }
+
+  .container {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    overflow: hidden;
   }
 
   .article {
@@ -29,61 +40,65 @@
 </head>
 <body>
 
-  <div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-  </div>
+  <div class="container"> 
 
-  <header id="header" class="header">
-    <ul>
-      <li><a href="#About">About</a></li>
-      <li><a href="#Watch">Watch</a></li>
-      <li><a href="#Timetable">Timetable</a></li>
-      <li><a href="#Compos">Compos</a></li>
-      <li><a href="#Vote">Enter/Vote</a></li>
-      <li><a href="#Contact">Contact</a></li>
-    </ul> 
-  </header>
+    </div>
 
-  <article class="article" id="About">
-    <h1>Field-FX - Silvester 31.12.2021 to 01.01.2022</h1>
-    <p> Silvester is a online end of year celebration of the Demoscene looking back on 2021, into 2022 and beyond. </p>
-  </article>
-  <article class="article" id="Watch">
-    <h2>Watch</h2>
-    <p> Coming soon </p>
-  </article>
-  <article class="article" id="Timetable">
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">🎄</div>
+    </div>
+
+    <header id="header" class="header">
+      <ul>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Watch">Watch</a></li>
+        <li><a href="#Timetable">Timetable</a></li>
+        <li><a href="#Compos">Compos</a></li>
+        <li><a href="#Vote">Enter/Vote</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul> 
+    </header>
+
+    <article class="article" id="About">
+      <h1>Field-FX - Silvester 31.12.2021 to 01.01.2022</h1>
+      <p> Silvester is a online end of year celebration of the Demoscene looking back on 2021, into 2022 and beyond. </p>
+    </article>
+    <article class="article" id="Watch">
+      <h2>Watch</h2>
+      <p> Coming soon </p>
+    </article>
+    <article class="article" id="Timetable">
         <h2> Timetable </h2>
         <p> Deadline 23:59 CET 28.12.2021 - No exceptions this is the final deadline. </p>
         <p> More coming soon. </p>
-  </article>
-  <article class="article" id="Compos">
+    </article>
+    <article class="article" id="Compos">
         <h2> Compos </h2>
         <p> Compo - Any real time production that does not meat the bellow compos must not be longer then 10 minutes. </p>
         <p> Fantasy compo - Anything made on a fantasy computer/console must not be longer then 10 minutes. </p>
         <p> Graphics/Photo compo - A graphics or photo entry. </p>
         <p> Music compo - Anything goes must not be longer then 5 minutes. </p>
         <p> Wild compo - Anything goes must not be longer then 10 minutes. </p>
-  </article>
-  <article class="article" id="Vote">
+    </article>
+    <article class="article" id="Vote">
       <h2>Vote</h2>
       <p>Coming soon</p>
-  </article>
-  <article class="article" id="Contact">
+    </article>
+    <article class="article" id="Contact">
         <h2>Contact</h2>
         <p>If you would like to help please contact fieldfxparty+silvester@gmail.com</p>
-  </article>
+    </article>
 
 
 <script>
