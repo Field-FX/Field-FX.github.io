@@ -1,102 +1,142 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> Field-FX - Silvester</title>
-<style>
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox 0 — starting code</title>
+    <style>
 
-  body {
-    margin: 0;
-    background-color: #1f1c3b;
-    /* height: 100vh;  do we need this? */
-  }
+      body {
+        margin: 0;
+      }
 
-  header {
-    background-color: purple;
-    height: 100px;
-  }
+      .navbar {
+        display: flex;
+        width: 100%;
+        background: purple;
+        background-image: url("logo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        justify-content: center; 
+      }
 
-  article {
-    padding: 10px;
-    margin: 10px;
-    background-color: #27234b;
-  }
+      .navbar ul {
+        display: flex;
+        list-style: none;
+      }
 
-  /* customizable snowflake styling */
-  .snowflake {
-    color: #000000;
-    font-size: 1em;
-    font-family: Arial, sans-serif;
-    /*text-shadow: 0 0 5px #000;*/
-  }
-  @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
-</style>
-</head>
-<body>
+      .navbar a {
+        display: inline-block;
+        padding: 0px 15px;
+        text-decoration: none;
+        color: white;
+      }
 
-  <div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-    <div class="snowflake">❄️</div>
-    <div class="snowflake">🎄</div>
-  </div>
+      .navbar a:hover {
+        color: blue;
+        cursor: pointer;
+      }
 
-  <header id="header" class="header">
-    <ul>
-      <li><a href="#About">About</a></li>
-      <li><a href="#Watch">Watch</a></li>
-      <li><a href="#Timetable">Timetable</a></li>
-      <li><a href="#Compos">Compos</a></li>
-      <li><a href="#Vote">Enter/Vote</a></li>
-      <li><a href="#Contact">Contact</a></li>
-    </ul> 
-  </header>
+      /* hide the 🍔 on big screens*/
+      .🍔 {
+        display:none
+      }
 
-  <section>
-    <article class="article" id="About">
-      <h1>Field-FX - Silvester 31.12.2021 to 01.01.2022</h1>
-      <p> Silvester is a online end of year celebration of the Demoscene looking back on 2021, into 2022 and beyond. </p>
-    </article>
-    <article class="article" id="Watch">
-      <h2>Watch</h2>
-      <p> Coming soon </p>
-    </article>
-    <article class="article" id="Timetable">
+      /* media stuff for small screens*/
+      @media only screen and (max-width: 1024px) {
+
+        .🍔 {
+          display: flex;
+          color: white;
+          user-select: none;
+        }
+
+		    .navbar ul li ul {
+	        display: none;
+	      }
+	
+        .navbar ul {
+          display: none;
+	        flex-direction: column;
+	        list-style-type: none;
+        }
+
+	    }
+
+        
+    
+
+      article {
+        padding: 10px;
+        margin: 10px;
+        background: aqua;
+      }
+
+    </style>
+  </head>
+  <body>
+     
+    <nav class="navbar">
+      <ul>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Watch">Watch</a></li>
+        <li><a href="#Timetable">Timetable</a></li>
+        <li><a href="#Compos">Compos</a></li>
+        <li><a href="#Vote">Enter/Vote</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul> 
+      <p class="🍔">☰</p>
+    </nav>
+
+    <section>
+      <article id="About">
+        <h2>Field-FX - Silvester 31.12.2021 to 01.01.2022</h2>
+        <p> Silvester is a online end of year celebration of the Demoscene looking back on 2021, into 2022 and beyond. </p>
+      </article>
+      <article id="Watch">
+        <h2>Watch</h2>
+        <p> Coming soon </p>
+      </article>
+      <article id="Timetable">
         <h2> Timetable </h2>
         <p> Deadline 23:59 CET 28.12.2021 - No exceptions this is the final deadline. </p>
         <p> More coming soon. </p>
-    </article>
-    <article class="article" id="Compos">
+      </article>
+      <article class="article" id="Compos">
         <h2> Compos </h2>
         <p> Compo - Any real time production that does not meat the bellow compos must not be longer then 10 minutes. </p>
         <p> Fantasy compo - Anything made on a fantasy computer/console must not be longer then 10 minutes. </p>
         <p> Graphics/Photo compo - A graphics or photo entry. </p>
         <p> Music compo - Anything goes must not be longer then 5 minutes. </p>
         <p> Wild compo - Anything goes must not be longer then 10 minutes. </p>
-    </article>
-    <article class="article" id="Vote">
-      <h2>Vote</h2>
-      <p>Coming soon</p>
-    </article>
-    <article class="article" id="Contact">
+      </article>
+      <article id="Vote">
+        <h2>Vote</h2>
+        <p>Coming soon</p>
+      </article>
+      <article id="Contact">
         <h2>Contact</h2>
         <p>If you would like to help please contact fieldfxparty+silvester@gmail.com</p>
-    </article>
-  </section>
+      </article>
+    </section>
 
+    <script>
 
-<script>
-"use strict";
+      const burger = document.querySelector(".🍔"); //sadly js does not let emojis be variables
+      const nav_ul = document.querySelector(".navbar ul");
 
-</script>
+      let toggleBurger = true;
+      burger.addEventListener("click", function() {
+        //nav_ul.style.display = "flex";
+        if (toggleBurger){
+          nav_ul.style.display = "flex"; 
+          toggleBurger = false;
+        } else if (toggleBurger == false){
+          nav_ul.style.display = "none"; 
+          toggleBurger = true;
+        }
+      });
 
-</body>
+    </script>
+
+  </body>
 </html>
