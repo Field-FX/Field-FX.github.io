@@ -6,26 +6,20 @@
 <style>
 
   body {
+    margin: 0;
     background-color: #1f1c3b;
     /* height: 100vh;  do we need this? */
   }
 
-  .container {
-    display: flex;
-    flex: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-height: 100%;
-    overflow: hidden;
+  header {
+    background-color: purple;
+    height: 100px;
   }
 
-  .article {
-    margin-top: 4rem;
+  article {
+    padding: 10px;
+    margin: 10px;
     background-color: #27234b;
-	  color: white;
-    padding: 1rem;
-	  margin-bottom: 4rem;
   }
 
   /* customizable snowflake styling */
@@ -40,36 +34,33 @@
 </head>
 <body>
 
-  <div class="container"> 
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">🎄</div>
+  </div>
 
-    </div>
+  <header id="header" class="header">
+    <ul>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Watch">Watch</a></li>
+      <li><a href="#Timetable">Timetable</a></li>
+      <li><a href="#Compos">Compos</a></li>
+      <li><a href="#Vote">Enter/Vote</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul> 
+  </header>
 
-    <div class="snowflakes" aria-hidden="true">
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-    </div>
-
-    <header id="header" class="header">
-      <ul>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Watch">Watch</a></li>
-        <li><a href="#Timetable">Timetable</a></li>
-        <li><a href="#Compos">Compos</a></li>
-        <li><a href="#Vote">Enter/Vote</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul> 
-    </header>
-
+  <section>
     <article class="article" id="About">
       <h1>Field-FX - Silvester 31.12.2021 to 01.01.2022</h1>
       <p> Silvester is a online end of year celebration of the Demoscene looking back on 2021, into 2022 and beyond. </p>
@@ -99,6 +90,7 @@
         <h2>Contact</h2>
         <p>If you would like to help please contact fieldfxparty+silvester@gmail.com</p>
     </article>
+  </section>
 
 
 <script>
