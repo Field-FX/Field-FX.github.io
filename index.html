@@ -26,7 +26,6 @@
 
       .navbar a {
         display: inline-block;
-        padding: 0px 15px;
         text-decoration: none;
         color: white;
       }
@@ -44,10 +43,17 @@
       /* media stuff for small screens*/
       @media only screen and (max-width: 1024px) {
 
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+
         .🍔 {
           display: flex;
           color: white;
           user-select: none;
+          justify-content: center;
         }
 
 		    .navbar ul li ul {
@@ -56,8 +62,10 @@
 	
         .navbar ul {
           display: none;
+          padding: 0;
 	        flex-direction: column;
 	        list-style-type: none;
+          text-align: center;
         }
 
 	    }
@@ -76,6 +84,7 @@
   <body>
      
     <nav class="navbar">
+      <p class="🍔">☰</p>
       <ul>
         <li><a href="#About">About</a></li>
         <li><a href="#Watch">Watch</a></li>
@@ -84,7 +93,6 @@
         <li><a href="#Vote">Enter/Vote</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul> 
-      <p class="🍔">☰</p>
     </nav>
 
     <section>
