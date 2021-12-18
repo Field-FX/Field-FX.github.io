@@ -5,6 +5,28 @@
     <title>Field FX Demoparty - Silvester</title>
     <style>
 
+       @font-face {
+         font-family: Lobster-Regular;
+         src: url(font/Lobster-Regular.ttf);
+       }
+
+       @font-face {
+         font-family: Arvo-Regular;
+         src: url(font/Arvo-Regular.ttf);
+       }
+       @font-face {
+         font-family: Arvo-Italic;
+         src: url(font/Arvo-Italic.ttf);
+       }
+       @font-face {
+         font-family: Arvo-Bold;
+         src: url(font/Arvo-Bold.ttf);
+       }
+       @font-face {
+         font-family: Arvo-BoldItalic;
+         src: url(font/Arvo-BoldItalic.ttf);
+       }
+
       body {
         margin: 0;
         background-color: #1E1E3F;
@@ -76,6 +98,14 @@
         margin-right: auto;
       } 
 
+      .main h2{
+        font-family: "Lobster-Regular";
+      }
+
+      .main p{
+        font-family: "Arvo-Regular";
+      }
+
       /* start snow */
       @keyframes snowflakes-fall {
         0% {
@@ -108,7 +138,6 @@
         animation-timing-function: linear, ease-in-out;
         animation-iteration-count: infinite, infinite;
         animation-play-state: running, running;
-        z-index: 2;
       }
       .snowflake:nth-of-type(0) {
         left: 1%;
