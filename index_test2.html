@@ -9,214 +9,109 @@
         margin: 0;
       }
 
+
       .grid {
         display: grid;
-        height: 100vh;
-        grid-template-rows: 4em 1fr;
+        grid-template-rows: auto auto auto;
         grid-template-columns: 1fr;
-        grid-template-areas: "header" "main";
-        overflow: hidden; /* key adjustment */
+        height:100vh;
+        overflow: auto;
       }
 
-      .header {
-        grid-area: header;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      } 
-
-      .logo, .right {
-        flex: 1;
+      .nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        align-self: start;
+        grid-row: 1 / 2;
+        grid-column: 1;
+        height: 4em;
+        background-color: rgba(20, 207, 220,0.5);
+        z-index: 1;
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .logo img{
-        max-height: 4em;
-        background-color: black;
+      .nav li {
+        display: inline;
       }
 
-      .nav{
-        font-size:2.0em;
+      .nav ul {
+        list-style: none;
       }
 
-      .nav ul{
-        list-style-type: none;
-        padding:0;
-        margin:0;
-      }
-
-      .nav li{
-        display: inline-block;
-      }
-      
       .nav a {
-        color: white;
         text-decoration: none;
+        color: white;
       }
 
       .nav a:hover {
         color: blue;
-      }
-
-      .🍔 {
-        background-color: black;
         cursor: pointer;
-        width: 35px;
-        float: right;
-        margin:10px;
       }
 
-      .slice1, .slice2, .slice3 {
-        width: 35px;
-         height: 5px;
-         margin: 6px 0;
-       }
-      
-      .slice1{
-        border-radius: 15px 15px 0px 0px;
-        background-color: white;
-        transition: 0.4s;
-       }
 
-       .slice2{
-        background-color: white;
-        transition: 0.4s;
-       }
+      .header {
+        grid-row: 1/2;          /* see notes below */
+        grid-column: 1;   /* see notes below */
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+        
+      } 
 
-       .slice3{
-        border-radius: 0px 0px 15px 15px;
-        background-color: white;
-        transition: 0.4s;
-       }
+      .header img{
+      width: 100%;
+      height: 100%;
+      } 
 
-       .change .slice1 {
-         transform: rotate(-45deg) translate(-9px, 6px) ;
-         border-radius: 15px 15px 15px 15px;
-        }
-       .change .slice2 {
-         opacity: 0;
-       }
-       .change .slice3 {
-         transform: rotate(45deg) translate(-8px, -8px) ;
-         border-radius: 15px 15px 15px 15px;
-       }
 
-  
-       .main {
-         grid-area: main;
-         overflow: auto; 
-         background-color: #8990eb;
-       }
 
-       .Silvester{
-       margin: 0% 10%;
-       object-fit: cover;
-       background: #27234b;
-       }
 
-       .Silvester img{
-        max-width:100%;
-        max-height:100%;
-       }
-
-       .Silvester article{
-        /*background: #27234b;*/
-        color: white;
-       }
+      .main {
+        background-color: blue;
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+      } 
 
     </style>
   </head>
   <body>
 
-    <div class="grid">
-      <header class="header">
-        <div class="logo">
-          <a href="#"><img alt="alt-text" src="logo.png"></a>
-        </div>
-        <nav class="nav">
-          <!--<ul>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Watch">Watch</a></li>
-            <li><a href="#Timetable">Timetable</a></li>
-            <li><a href="#Compos">Compos</a></li>
-            <li><a href="#Vote">Enter/Vote</a></li>
-            <li><a href="#Contact">Contact</a></li>
-          </ul>-->
-        </nav>
-        <div class="right">
-          <div class="🍔">
-            <div class="slice1"></div>
-            <div class="slice2"></div>
-            <div class="slice3"></div>
-          </div>
-        </div>
-      </header>
-      <div class="main">
-        <article class="Silvester">
-          <a href="#"><img alt="alt-text" src="banner.png"></a>
-          <article id="About">
-            <h2>About:</h2>
-            <h3>Field-FX - Silvester 31.12.2021 to 01.01.2022</h3>
-            <p>
-              What's Silvester?
 
-              It's an online New Year's party for the demoscene. People will make demos, music, and art, and we're going to show them at the party, on New Year's Eve. We hope you will join us, and maybe even make something! The party itself will be hosted on our Field-FX Twitch stream, so if you are missing out on the partying this year, and you want to hang out with the lovely people of the demoscene, come and join us!
-              
-              Is this what Field-FX is about?
-              
-              No! Field-FX is a demoparty in a field! The next one will be at EMF Camp 2022, and we are hoping that it can be in person. But right now our winter partying plans have been disrupted, and we want to kick out the jams!
-              
-              If you've never encountered the demoscene before, the wikipedia article is a good introduction https://en.wikipedia.org/wiki/Demoscene
-            </p>
-          </article>
-          <article id="Watch">
-            <h2>Watch</h2>
-            <p>Coming soon</p>
-          </article>
-          <article id="Timetable">
-            <h2>Timetable</h2>
-            <p>
-              Deadline 23:59 CET 28.12.2021. We want to give your productions the
-              presentation they deserve, and to do that we need time. This will be
-              the final deadline, no exceptions.
-            </p>
-            <h2>The show</h2>
-            <p>31.12.2021 to 01.01.2022 - More details coming soon.</p>
-          </article>
-          <article class="article" id="Compos">
-            <h2>Compos</h2>
-            <p>
-              Demo - Any real time production that does not fit into the below
-              compos. Compo machine details coming soon. Runtime maximum 10 minutes.
-            </p>
-            <p>
-              Fantasy compo - Anything made on a fantasy computer/console. Runtime
-              maximum 10 minutes.
-            </p>
-            <p>Graphics/Photo - A graphics or photo entry. All formats accepted.</p>
-            <p>Music - All formats accepted. Runtime maximum 5 minutes.</p>
-            <p>Wild - All formats accepted. Runtime maximum 10 minutes.</p>
-            <p>More details and full rules coming soon.</p>
-          </article>
-          <article id="Vote">
-            <h2>Vote</h2>
-            <p>Coming soon</p>
-          </article>
-          <article id="Contact">
-            <h2>Contact</h2>
-            <p>If you would like to help please contact <a href="mailto:fieldfxparty+silvester@gmail.com">fieldfxparty+silvester@gmail.com</a></p>
-          </article>
-          <p style="height: 1000px;">Content</p>
-        </article>
+
+    <!--open the grind container-->
+    <div class="grid">
+
+      <nav class="nav">
+          <ul>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Watch">Watch</a></li>
+          <li><a href="#Timetable">Timetable</a></li>
+          <li><a href="#Compos">Compos</a></li>
+          <li><a href="#Vote">Enter/Vote</a></li>
+         <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <header class="header">
+        <img alt="alt-text" src="banner.png">
+      </header>
+
+
+
+      <div class="main">
+        <p style="height: 1000px;">Main</p>
       </div>
+      
+
+    <!---close the grid container-->
     </div>
 
+
     <script>
-
-      const burger = document.querySelector(".🍔");
-
-      burger.addEventListener("click", function () {
-        burger.classList.toggle("change");
-      });
 
     </script>
   </body>
