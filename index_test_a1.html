@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Field FX Demoparty - Silvester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="http://fonts.cdnfonts.com/css/mallona" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caladea&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Caladea", serif;
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-family: "mallona", sans-serif;
+        font-size: 3rem;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      .grid {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 10vh 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main";
+        overflow: hidden; /* key adjustment */
+      }
+
+      .header {
+        grid-area: header;
+        height: 100%;
+        display: flex;
+        background-color: #27234b;
+        align-items: center;
+      }
+
+      .logo,
+      .right {
+        flex: 1;
+      }
+
+      .logo img {
+        max-height: 10vh;
+        padding-left: 1rem;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav li {
+        display: inline-block;
+      }
+
+      .nav li::before {
+        content: " | ";
+        color: #ddd;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        color: blue;
+      }
+
+      .🍔 {
+        cursor: pointer;
+        width: 35px;
+        float: right;
+        margin: 10px;
+      }
+
+      .slice1,
+      .slice2,
+      .slice3 {
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+      }
+
+      .slice1 {
+        border-radius: 15px 15px 0px 0px;
+        background-color: white;
+        transition: 0.4s;
+      }
+
+      .slice2 {
+        background-color: white;
+        transition: 0.4s;
+      }
+
+      .slice3 {
+        border-radius: 0px 0px 15px 15px;
+        background-color: white;
+        transition: 0.4s;
+      }
+
+      .change .slice1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+        border-radius: 15px 15px 15px 15px;
+      }
+      .change .slice2 {
+        opacity: 0;
+      }
+      .change .slice3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+        border-radius: 15px 15px 15px 15px;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: #99c0db;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+
+      .all-browsers {
+        margin: 1% 10%;
+        background-image: linear-gradient(#83512a, #27234b);
+        object-fit: cover;
+        color: #dddddd;
+      }
+
+      .all-browsers img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .browser {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <header class="header">
+        <div class="logo">
+          <a href="#"><img alt="alt-text" src="./logo.png" /></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#home">About</a></li>
+            <li><a href="#news">Watch</a></li>
+            <li><a href="#contact">Timetable</a></li>
+            <li><a href="#about">Compos</a></li>
+            <li><a href="#about">Enter/Vote</a></li>
+            <li><a href="#about">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="right"></div>
+      </header>
+      <div class="main">
+        <article class="all-browsers">
+          <a href="#"><img alt="alt-text" src="./banner.png" /></a>
+          <article class="browser">
+            <h2>Google Chrome</h2>
+            <p>
+              Google Chrome is a web browser developed by Google, released in
+              2008. Chrome is the world's most popular web browser today!
+            </p>
+          </article>
+          <article class="browser">
+            <h2>Mozilla Firefox</h2>
+            <p>
+              Mozilla Firefox is an open-source web browser developed by
+              Mozilla. Firefox has been the second most popular web browser
+              since January, 2018.
+            </p>
+          </article>
+          <article class="browser">
+            <h2>Microsoft Edge</h2>
+            <p>
+              Microsoft Edge is a web browser developed by Microsoft, released
+              in 2015. Microsoft Edge replaced Internet Explorer.
+            </p>
+          </article>
+          <p style="height: 1000px">Content</p>
+        </article>
+      </div>
+    </div>
+
+    <script>
+      const burger = document.querySelector(".🍔");
+
+      burger.addEventListener("click", function () {
+        burger.classList.toggle("change");
+      });
+    </script>
+
+    <span
+      id="buffer-extension-hover-button"
+      style="
+        display: none;
+        position: absolute;
+        z-index: 8675309;
+        width: 100px;
+        height: 25px;
+        background-image: url('moz-extension://f372742f-ccef-4b33-8f04-174e76d409a5/data/shared/img/buffer-hover-icon@1x.png');
+        background-size: 100px 25px;
+        opacity: 0.9;
+        cursor: pointer;
+        top: 402.95px;
+        left: 1070.6px;
+      "
+    ></span>
+  </body>
+</html>
