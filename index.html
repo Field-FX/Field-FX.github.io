@@ -2,115 +2,159 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Field FX Demoparty - Silvester</title>
     <style>
+      @font-face {
+        font-family: Lobster-Regular;
+        src: url(font/Lobster-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: Arvo-Regular;
+        src: url(font/Arvo-Regular.ttf);
+      }
+      @font-face {
+        font-family: Arvo-Italic;
+        src: url(font/Arvo-Italic.ttf);
+      }
+      @font-face {
+        font-family: Arvo-Bold;
+        src: url(font/Arvo-Bold.ttf);
+      }
+      @font-face {
+        font-family: Arvo-BoldItalic;
+        src: url(font/Arvo-BoldItalic.ttf);
+      }
+
       body {
         margin: 0;
-        background-color: #28274f;
-      }
-
-      .navbar {
-        display: flex;
-        width: 100%;
-        background: #1d1f3e;
-        background-image: url("logo.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        justify-content: center;
-      }
-
-      .navbar ul {
-        display: flex;
-        list-style: none;
-      }
-
-      .navbar a {
-        display: inline-block;
-        padding: 0px 15px;
-        text-decoration: none;
-        color: white;
-      }
-
-      .navbar a:hover {
-        color: blue;
-        cursor: pointer;
-      }
-
-      /* hide the 🍔 on big screens*/
-      .🍔 {
-        display: none;
-      }
-
-      /* media stuff for small screens*/
-      @media only screen and (max-width: 1024px) {
-        .navbar {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        .🍔 {
-          display: flex;
-          color: white;
-          font-size: 4em;
-          user-select: none;
-          justify-content: center;
-        }
-
-        .navbar ul li ul {
-          display: none;
-        }
-
-        .navbar ul {
-          display: none;
-          flex-direction: column;
-          list-style-type: none;
-          text-align: center;
-          padding: 0px 0px;
-        }
+        background-color: #1e1e3f;
       }
 
       article {
-        padding: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 20%;
-        margin-left: 20%;
-        background: #27234b;
+        max-width: 50rem;
+      }
+
+      .main ul {
+        font-family: "Arvo-Regular";
+      }
+
+      .grid {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        height: 100vh;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        align-self: start;
+        grid-row: 1 / 2;
+        grid-column: 1;
+        min-height: 3em;
+        background-color: rgba(137, 144, 145, 0.5);
+        font-family: "Lobster-Regular";
+        z-index: 1;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .nav a {
+        text-decoration: none;
+        font-size: 2em;
         color: white;
       }
 
-      /* media stuff */
-      @media only screen and (max-width: 640px),
-        only screen and (max-width: 768px),
-        only screen and (max-width: 1024px) {
-        article {
-          margin-right: 5%;
-          margin-left: 5%;
-          background: #27234b;
-          color: white;
+      .nav a:hover {
+        color: #1e1e3f;
+        cursor: pointer;
+      }
+
+      .header {
+        grid-row: 1/2; /* see notes below */
+        grid-column: 1; /* see notes below */
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .header img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .main {
+        background-color: #2d2b55;
+        color: white;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 3rem;
+      }
+
+      .main h1,
+      .main h2,
+      .main h3,
+      .main h4,
+      .main h5,
+      .main h6 {
+        line-height: 1;
+      }
+
+      .main h2 {
+        font-family: "Lobster-Regular";
+        font-size: 3rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+        padding-left: 2rem;
+        padding-bottom: 0;
+      }
+
+      .main h3 {
+        text-indent: 0.5em;
+        font-family: "Arvo-Regular";
+      }
+
+      .main p {
+        margin-bottom: 15px;
+        margin-left: 0.5em;
+        line-height: 1.3;
+        font-family: "Arvo-Regular";
+        color: #ddd;
+      }
+
+      .main a {
+        color: white;
+      }
+
+      @media screen and (max-width: 600px) {
+        .nav ul li {
+          padding: 0.1rem;
+        }
+
+        .header {
+          padding-top: 10rem;
+        }
+
+        .nav a {
+          font-size: 1.5rem;
         }
       }
 
-      @-webkit-keyframes snowflakes-fall {
-        0% {
-          top: -10%;
-        }
-        100% {
-          top: 100%;
-        }
-      }
-      @-webkit-keyframes snowflakes-shake {
-        0%,
-        100% {
-          -webkit-transform: translateX(0);
-          transform: translateX(0);
-        }
-        50% {
-          -webkit-transform: translateX(80px);
-          transform: translateX(80px);
-        }
-      }
+      /* start snow */
       @keyframes snowflakes-fall {
         0% {
           top: -10%;
@@ -137,11 +181,6 @@
         -ms-user-select: none;
         user-select: none;
         cursor: default;
-        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-        -webkit-animation-duration: 10s, 3s;
-        -webkit-animation-timing-function: linear, ease-in-out;
-        -webkit-animation-iteration-count: infinite, infinite;
-        -webkit-animation-play-state: running, running;
         animation-name: snowflakes-fall, snowflakes-shake;
         animation-duration: 10s, 3s;
         animation-timing-function: linear, ease-in-out;
@@ -150,79 +189,56 @@
       }
       .snowflake:nth-of-type(0) {
         left: 1%;
-        -webkit-animation-delay: 0s, 0s;
         animation-delay: 0s, 0s;
       }
       .snowflake:nth-of-type(1) {
         left: 10%;
-        -webkit-animation-delay: 1s, 1s;
         animation-delay: 1s, 1s;
       }
       .snowflake:nth-of-type(2) {
         left: 20%;
-        -webkit-animation-delay: 6s, 0.5s;
         animation-delay: 6s, 0.5s;
       }
       .snowflake:nth-of-type(3) {
         left: 30%;
-        -webkit-animation-delay: 4s, 2s;
         animation-delay: 4s, 2s;
       }
       .snowflake:nth-of-type(4) {
         left: 40%;
-        -webkit-animation-delay: 2s, 2s;
         animation-delay: 2s, 2s;
       }
       .snowflake:nth-of-type(5) {
         left: 50%;
-        -webkit-animation-delay: 8s, 3s;
         animation-delay: 8s, 3s;
       }
       .snowflake:nth-of-type(6) {
         left: 60%;
-        -webkit-animation-delay: 6s, 2s;
         animation-delay: 6s, 2s;
       }
       .snowflake:nth-of-type(7) {
         left: 70%;
-        -webkit-animation-delay: 2.5s, 1s;
         animation-delay: 2.5s, 1s;
       }
       .snowflake:nth-of-type(8) {
         left: 80%;
-        -webkit-animation-delay: 1s, 0s;
         animation-delay: 1s, 0s;
       }
       .snowflake:nth-of-type(9) {
         left: 90%;
-        -webkit-animation-delay: 3s, 1.5s;
         animation-delay: 3s, 1.5s;
       }
       .snowflake:nth-of-type(10) {
         left: 25%;
-        -webkit-animation-delay: 2s, 0s;
         animation-delay: 2s, 0s;
       }
       .snowflake:nth-of-type(11) {
         left: 65%;
-        -webkit-animation-delay: 4s, 2.5s;
         animation-delay: 4s, 2.5s;
       }
+      /* end snow */
     </style>
   </head>
   <body>
-    <nav class="navbar">
-      <p class="🍔">☰</p>
-      <ul>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Watch">Watch</a></li>
-        <li><a href="#Timetable">Timetable</a></li>
-        <li><a href="#Compos">Compos</a></li>
-        <li><a href="#Vote">Enter/Vote</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-    </nav>
-
     <div class="snowflakes" aria-hidden="true">
       <div class="snowflake">❄️</div>
       <div class="snowflake">🎄</div>
@@ -238,28 +254,68 @@
       <div class="snowflake">🎄</div>
     </div>
 
-    <section>
-      <article id="About">
-        <h2>Field-FX - Silvester 31.12.2021 to 01.01.2022</h2>
-        <p>
-          Silvester is an online end of year celebration of the Demoscene
-          looking back on 2021, into 2022 and beyond. It takes place on New
-          Year's Eve 2021.
-        </p>
-      </article>
+    <!--open the grind container-->
+    <div class="grid">
+      <nav class="nav">
+        <ul>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Watch">Watch</a></li>
+          <li><a href="#Timetable">Timetable</a></li>
+          <li><a href="#Compos">Compos</a></li>
+          <li><a href="#Rules">Rules</a></li>
+          <li><a href="#Vote">Enter/Vote</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <header class="header">
+        <img alt="alt-text" src="banner.png" />
+      </header>
+
+      <div class="main">
+        <article id="About">
+          <h2>About</h2>
+          <h3>What's Silvester?</h3>
+          <p>
+            It's an online New Year's party for the demoscene. People will make
+            demos, music, and art, and we're going to show them at the party, on
+            New Year's Eve. We hope you will join us, and maybe even make
+            something! The party itself will be hosted on our Field-FX Twitch
+            stream, so if you are missing out on the partying this year, and you
+            want to hang out with the lovely people of the demoscene, come and
+            join us!
+          </p>
+          <h3>Is this what Field-FX is about?</h3>
+          <p>
+            No! Field-FX is a demoparty in a field! The next one will be at EMF
+            Camp 2022, and we are hoping that it can be in person. But right now
+            our winter partying plans have been disrupted, and we want to kick
+            out the jams!
+          </p>
+          <p>
+            If you've never encountered the demoscene before, the
+            <a href="https://en.wikipedia.org/wiki/Demoscene" target="_blank"
+              >wikipedia article</a
+            >
+            is a good introduction.
+          </p>
+        </article>
       <article id="Watch">
         <h2>Watch</h2>
-        <p>Coming soon</p>
+        <p>We're preparing the stream! Check back later...</p>
       </article>
       <article id="Timetable">
         <h2>Timetable</h2>
+        <h3>Tuesday: 28.12.2021</h3>
         <p>
-          Deadline 23:59 CET 28.12.2021. We want to give your productions the
+          23:59 (CET) Deadline - We want to give your productions the
           presentation they deserve, and to do that we need time. This will be
           the final deadline, no exceptions.
         </p>
-        <h2>The show</h2>
-        <p>31.12.2021 to 01.01.2022 - More details coming soon.</p>
+        <h3>Friday: 31.12.2021</h3>
+        <p>More details coming soon.</p>
+        <h3>Saturday: 01.01.2022</h3>
+        <p>More details coming soon.</p>
       </article>
       <article class="article" id="Compos">
         <h2>Compos</h2>
@@ -274,33 +330,38 @@
         <p>Graphics/Photo - A graphics or photo entry. All formats accepted.</p>
         <p>Music - All formats accepted. Runtime maximum 5 minutes.</p>
         <p>Wild - All formats accepted. Runtime maximum 10 minutes.</p>
-        <p>More details and full rules coming soon.</p>
+      </article>
+
+       <article class="article" id="Rules">
+        <h2>Rules</h2>
+        <ul>
+        <li><b>Please include a screenshot and video capture of your intro in 1280x720 MP4 format.</b></li>
+        <li>You must be registered to vote in order to upload your entries. See <a href="#Vote">Vote</a>.</li>
+        <li>Compo machine specs: Ryzen 9590x 128gb RAM, GTX 1080. If you need something else, send us a message.</li>
+        <li>Oldschool platforms: We may not source real hardware for your particular platform. Provide a video capture as usual.</li>
+        <li>Graphics/Photo - A graphics or photo entry. All formats accepted.</li>
+        <li>Music - All formats accepted. Runtime maximum 5 minutes.</li>
+        <li>Wild - All formats accepted. Runtime maximum 10 minutes.</li>
+        <li>You can enter as many competitions you like, with as many productions as you like.</li>
+        <li>Only original and unreleased works are allowed.</li>
+        <li>The organizers' decisions are final. We want to show off all your work to the standard it deserves, but we are doing this in our spare time and things can go wrong. Getting your entries in before the deadline is a good way to ensure that it gets shown!</li>
+        <li>Be respectful and have fun.</li>
+      </ul>
       </article>
       <article id="Vote">
         <h2>Vote</h2>
-        <p>Coming soon</p>
+        <p>Voting will be via Wuhu (an online voting system). To get a vote key please either email us (below) or send a DM on the <a href="https://discord.gg/xJKCYqDy9d" target="_blank">Demoscene discord</a> to either Reality#3469 or Aldroid#5633 for more details.</p>
       </article>
       <article id="Contact">
         <h2>Contact</h2>
         <p>If you would like to help please contact <a href="mailto:fieldfxparty+silvester@gmail.com">fieldfxparty+silvester@gmail.com</a></p>
+        <p>Join us on Twitter! <a href="https://twitter.com/fx_field" target="_blank">@fx_field</a></p>
       </article>
-    </section>
+      </div>
 
-    <script>
-      const burger = document.querySelector(".🍔"); //sadly js does not let emojis be variables
-      const nav_ul = document.querySelector(".navbar ul");
+    <!---close the grid container-->
+    </div>
 
-      let toggleBurger = true;
-      burger.addEventListener("click", function () {
-        //nav_ul.style.display = "flex";
-        if (toggleBurger) {
-          nav_ul.style.display = "flex";
-          toggleBurger = false;
-        } else if (toggleBurger == false) {
-          nav_ul.style.display = "none";
-          toggleBurger = true;
-        }
-      });
-    </script>
+    <script></script>
   </body>
 </html>
