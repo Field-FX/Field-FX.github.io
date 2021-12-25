@@ -321,6 +321,7 @@
         <article id="Watch">
           <h2>Watch</h2>
           <p>We're preparing the stream! Check back later...</p>
+          <div id="twitch-embed"></div>
         </article>
         <article id="Timetable">
           <h2>Timetable</h2>
@@ -436,6 +437,14 @@
     <!-- Load the Twitch embed JavaScript file -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-    <script></script>
+    <script>
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "fieldfxdemo",
+        // Only needed if this page is going to be embedded on other websites
+        //parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
   </body>
 </html>
