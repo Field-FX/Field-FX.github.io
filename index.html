@@ -145,7 +145,6 @@
         height: 315px;
       }
 
-
       @media screen and (max-width: 600px) {
         .nav ul li {
           padding: 0.1rem;
@@ -250,22 +249,22 @@
     </style>
   </head>
   <body>
-
-    <div class="snowflakes" aria-hidden="true">
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">🎄</div>
-    </div>
-
+    <!-- sorry snowflakes, you make the stream too hard to see
+      <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">🎄</div>
+      </div>
+    -->
     <!--open the grind container-->
     <div class="grid">
       <nav class="nav">
@@ -285,6 +284,10 @@
       </header>
 
       <div class="main">
+        <article id="Watch">
+          <h2>Watch</h2>
+          <div id="twitch-embed"></div>
+        </article>
         <article id="About">
           <h2>About</h2>
           <h3>What's Silvester?</h3>
@@ -319,11 +322,6 @@
             >
             is a good introduction.
           </p>
-        </article>
-        <article id="Watch">
-          <h2>Watch</h2>
-          <p>We're preparing the stream! Check back later...</p>
-          <!--<div id="twitch-embed"></div>-->
         </article>
         <article id="Timetable">
           <h2>Timetable</h2>
@@ -440,9 +438,11 @@
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
     <script>
+      const twitchContainer = document.getElementsByClassName("main")[0]; // document.getElementById("Watch");
+
       new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
+        width: twitchContainer.clientWidth,
+        height: twitchContainer.clientWidth * 0.52,
         channel: "fieldfxdemo",
         // Only needed if this page is going to be embedded on other websites
         //parent: ["embed.example.com", "othersite.example.com"]
