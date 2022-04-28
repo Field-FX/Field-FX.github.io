@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>London-FX - a Revision Satellite Partner</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+
+    <style>
+
+      body{
+        margin: 0;
+      }
+
+      .colourContainer{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        z-index: -10;
+        overflow: hidden;
+        display: none;
+      }
+
+      .colours {
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        height: 300%;
+        width: 300%;
+        background: conic-gradient(red 0% 16.66%, orange 16.66% 33.32%,yellow 33.32% 49.98%,green 49.98% 66.64%,blue 66.64% 83.3%,purple 83.3% 100%);
+        animation: spin 1s linear infinite;;
+      }
+
+      @keyframes spin {
+        from {
+          transform:rotate(0deg);
+        }
+        to {
+          transform:rotate(360deg);
+        }
+      }
+      
+      .main {
+        display: grid;
+        top: 0;
+        width: 810px;
+        max-width: 100%;
+        margin: 0 auto 0;
+        height: 100vh;
+        z-index: 10;
+        background-color: blue;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="colourContainer">
+      <div class="colours"></div>
+    </div>
+  
+
+    <div class="main">
+
+    </div>
+
+    <script>
+
+      let colourContainer = document.getElementsByClassName("colourContainer")[0]
+
+      document.getElementsByClassName('main')[0].addEventListener("click", function (event){
+ 
+          colourContainer.style.display = "block";
+        
+
+        console.log("?")
+      });
+
+    </script>
+  </body>
+</html>

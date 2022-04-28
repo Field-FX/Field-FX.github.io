@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>London-FX - a Revision Satellite Partner</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+
+    <style>
+      /* Anaheim */
+      @font-face {
+        font-family: "Anaheim";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/8vII7w042Wp87g4G4U3eEX5e.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Anaheim */
+      @font-face {
+        font-family: "Anaheim";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/8vII7w042Wp87g4G4UPeEQ.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* Quattrocento Sans */
+      @font-face {
+        font-family: "Quattrocento Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Quattrocento Sans */
+      @font-face {
+        font-family: "Quattrocento Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/va9c4lja2NVIDdIAAoMR5MfuElaRB0zJt08.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* Quattrocento Sans */
+      @font-face {
+        font-family: "Quattrocento Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(fonts/va9Z4lja2NVIDdIAAoMR5MfuElaRB0RyklrfPXzwiQ.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Quattrocento Sans */
+      @font-face {
+        font-family: "Quattrocento Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(fonts/quattrocentosans/v17/va9Z4lja2NVIDdIAAoMR5MfuElaRB0RyklrRPXw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        margin: 0;
+        background-color: #353b43;
+      }
+
+      .logoContainer {
+        background-color: #ddd;
+      }
+
+      .logoContainer .credit {
+        height: 2rem;
+        padding-right: 1rem;
+        text-align: right;
+        font-family: quattrocento sans, sans-serif;
+        color: #292f36;
+      }
+
+      .logo {
+        display: block;
+        width: 400px;
+        max-width: 40%;
+        margin: 0 auto 0;
+        padding-top: 40px;
+        padding-bottom: calc(40px - 2rem);
+      }
+
+      .main {
+        display: block;
+        width: 960px;
+        max-width: 100%;
+        margin: 0 auto 0;
+      }
+
+      .main article {
+        background-color: #292f36;
+        padding: 20px;
+        margin: 15px;
+      }
+
+      .main h2 {
+        font-family: quattrocento sans, sans-serif;
+        color: #fff;
+      }
+
+      .main h3 {
+        font-family: quattrocento sans, sans-serif;
+        color: #fff;
+      }
+
+      .main p,
+      .main ul {
+        font-family: quattrocento sans, sans-serif;
+        color: #929ea9;
+      }
+
+      .main a {
+        font-family: quattrocento sans, sans-serif;
+        color: #fff;
+      }
+
+      .main b {
+        color: #929ea9;
+        font-family: anaheim, sans-serif;
+      }
+
+      .main a:hover {
+        color: #138788;
+      }
+
+      .invite {
+        position: relative;
+        width: 100%;
+        height: 0%;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+      }
+      .invite iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="logoContainer">
+      <img class="logo" src="images/LONDON_FX.png" />
+      <div class="credit">
+        Logo credit:
+        <a href="https://twitter.com/procyonviolet" target="_blank"
+          >RaccoonViolet</a
+        >
+      </div>
+    </header>
+
+    <div class="main">
+      <article>
+        <h2>Update for visitors</h2>
+        <p>Dear scener,</p>
+        <p>
+          With just a few days to go until Revision, we thought we’d drop all
+          our attendees a letter to let you know some final details.
+        </p>
+        <p>
+          Our hall hire is being kindly covered on a donation basis. Limehouse
+          Town Hall is one of the only open spaces of its type in London, we
+          want to keep that happening and enable them to run more cool events
+          and projects. Because of this, we are asking attendees to make a
+          donation towards the event, to help cover some of our costs, and give
+          a significant donation to the hall. We suggest a donation of £30, but
+          you are free to give more or less depending on your circumstances,
+          details TBC for how to donate but we’ll let you know when it’s figured
+          out.
+        </p>
+        <p>
+          When you get to Limehouse Town Hall, ring the doorbell that says
+          Boxing Club and wait for someone to answer. We’ll check you off the
+          list of registered attendees and give you an official Revision
+          wristband for the weekend. Blåhajs are welcome. There is wifi, power,
+          and beer fridges in the hall. We are going to be in the hall from...
+        </p>
+        <ul>
+          <li>14:00 - 01:00 on Friday</li>
+          <li>18:00 - 01:00 on Saturday</li>
+          <li>09:30 - 01:00 on Sunday</li>
+          <li>09:30 - prizegiving and tidyup</li>
+        </ul>
+        <p>
+          The Revision stream starts at 15:00 on Friday, 10:00 every other day.
+          We are looking at the options for how to enjoy the afternoon compos on
+          Saturday, if you have any ideas let us know! The hall will be open
+          till 1am.
+        </p>
+        <p>
+          A few of us will be partaking in the famous Revision 5k run on
+          Saturday morning. You are welcome to join us running, walking, or
+          wobbling between local pubs. There is a Strava if you’re keen, more
+          details here:
+          <a
+            href="https://2022.revision-party.net/events/special-events/"
+            target="_blank"
+            >https://2022.revision-party.net/events/special-events/</a
+          >
+        </p>
+        <p>
+          If you feel like hanging around on Monday after the prizegiving to
+          help tidy up, that will be very welcome. And if you need to get in
+          touch with the orgas for any reason, give us a ring!
+        </p>
+        <ul>
+          <li>Aldroid (Alex): +44 7855 279995</li>
+          <li>reality404 (Reality): +44 7760 887933</li>
+          <li>Crypt (Martin) +44 7913 053358</li>
+        </ul>
+        <p>
+          Read through the main site on
+          <a href="https://field-fx.party/london-fx"
+            >https://field-fx.party/london-fx</a
+          >
+          before you leave, to make sure you haven’t missed anything.
+        </p>
+        <p>
+          We’re really excited to being able to share Revision with sceners in
+          real life once more, and looking forward to seeing you there!
+        </p>
+        <p>– Aldroid, Crypt and Reality</p>
+      </article>
+    </div>
+
+    <script></script>
+  </body>
+</html>
