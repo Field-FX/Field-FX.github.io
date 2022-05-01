@@ -93,6 +93,27 @@
         background-color: #353b43;
       }
 
+      .nav-container {
+	display: flex;
+	align-items: center;
+        justify-content: center;
+	top: 0;
+	position: sticky;
+	height: 100px;
+	width: calc(100vw - (100vw - 100%));
+        background-color: #1d2024;
+	z-index: 100;
+      }      
+
+      .nav {
+	width: 960px;
+	background-color:blue;
+      }
+
+      .logo-small{
+        padding: 0 0 0 20px;
+      }
+
       .main {
         display: block;
         width: 960px;
@@ -100,11 +121,12 @@
         margin: 0 auto 0;
       }
 
-      .main article {
+      .art {
         background-color: #292f36;
         padding: 20px;
-        margin: 15px;
+        margin: 15px 0 15px 0;
       }
+
 
       .main h2 {
         font-family: quattrocento sans, sans-serif;
@@ -152,18 +174,28 @@
     </style>
   </head>
   <body>
+
+    <div class="nav-container">
+
+      <nav class="nav">
+
+        <a class="logo-link" href="/">
+          <img class="logo-small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
+	</a>
+
+      </nav>
+
+    </div>
+
     <div class="main">
-      <article>
+
+      <article class="art">
         <h2>Field-FX 2022 - A demoparty in an tent at EMF Camp 2022</h2>
         <p>2nd - 6th June 2022, Eastnor Park, Ledbury, UK</p>
 
         <p>
-          The
-          <a
-            href="http://demoscene-the-art-of-coding.net/the-demoscene/"
-            target="_blank"
-            >demoscene</a
-          >, a digital <s>frontier</s> arts subculture. And EMF Camp, a festival
+	  <a href="http://demoscene-the-art-of-coding.net/the-demoscene/" target="_blank">demoscene</a>,
+          a digital <s>frontier</s> arts subculture. And EMF Camp, a festival
           for hackers and creative people to gather, party, and share knowledge.
           We're throwing a demoparty, and everyone at EMF Camp is invited to
           watch, to make entries, and to have a great time. There's a saying on
@@ -205,7 +237,7 @@
         </div>
       </article>
 
-      <article>
+      <article class="art">
         <h2>Competitions</h2>
         <h3>Demo</h3>
         <p>
@@ -251,7 +283,7 @@
         </p>
       </article>
 
-      <article>
+      <article class="art">
         <h2>Code of conduct</h2>
 
         <p>
@@ -275,7 +307,7 @@
         </p>
       </article>
 
-      <article>
+      <article class="art">
         <h2>Contact</h2>
         <p>
           <b> Email: </b>
