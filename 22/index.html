@@ -154,8 +154,12 @@
         cursor: pointer;
       }
 
-      .nav_active {
-        /*color: #04AA6D;*/
+      .nav_active a {
+        color: #04AA6D;
+      }
+
+      .nav_burger{
+        display: none;
       }
 
       .main {
@@ -221,6 +225,32 @@
         width: 100%;
         height: 100%;
       }
+
+       /* small screens */
+      @media only screen and (max-width: 640px),
+      only screen and (max-width: 768px),
+      only screen and (max-width: 1024px)
+      {
+
+        .nav_compos,.nav_cc,.nav_contact,.nav_version{
+          display: none;
+	}
+	
+        .nav_burger {
+          display: initial;
+          float: right;
+          line-height: 100px;
+        }
+
+        .nav_burger a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+      }
     </style>
   </head>
   <body>
@@ -230,16 +260,21 @@
       <nav class="nav">
          
 	 <ul>
-	   <li class="nav_left">
+	   <li class="nav_left nav_link">
 	     <a class="logo-link" href="/">
                <img class="logo-small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
 	     </a>
 	   </li>
-           <li class="nav_left"><a href="#about">About</a></li>
-           <li class="nav_left"><a href="#compos">Compos</a></li>
-	   <li class="nav_left"><a href="#cc">CC</a></li>
-           <li class="nav_left"><a href="#contact">Contact</a></li>
-           <li class="nav_right"><a class="nav_active" href="/">2022</a></li>
+           <li class="nav_left nav_about"><a href="#about">About</a></li>
+           <li class="nav_left nav_compos"><a href="#compos">Compos</a></li>
+	   <li class="nav_left nav_cc"><a href="#cc">CC</a></li>
+           <li class="nav_left nav_contact"><a href="#contact">Contact</a></li>
+           <li class="nav_right nav_version"><a class="nav_active" href="#">2022</a></li>
+	   <li class="nav_burger">
+	     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	       ☰
+             </a>
+	   </li>
          </ul>
 
       </nav>
@@ -414,7 +449,39 @@
 
     </main>
 
-    <script></script>
+    <script>
+
+      //Articles
+      const nav_about = document.querySelector('.nav_about'),
+            nav_compos = document.querySelector('.nav_compos'),
+            nav_cc = document.querySelector('.nav_cc'),
+            nav_contact = document.querySelector('.nav_contact'),
+            nav_version = document.querySelector('.nav_version');
+
+      nav_about.addEventListener('click', function() {
+        toggleActive(nav_about);
+      });
+      nav_compos.addEventListener('click', function() {
+        toggleActive(nav_compos);
+      });
+      nav_cc.addEventListener('click', function() {
+        toggleActive(nav_cc);
+      });
+      nav_contact.addEventListener('click', function() {
+        toggleActive(nav_contact);
+      });
+      nav_version.addEventListener('click', function() {
+        toggleActive(nav_version);
+      });
+
+      let nav_active = nav_about;    
+      function toggleActive(cssClass) {
+	nav_active.classList.remove("nav_active");
+        cssClass.classList.add('nav_active');
+	nav_active = cssClass;
+      }
+
+    </script>
 
   </body>
 </html>
