@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>A Field-FX 2022 - Demoparty in an village at EMF Camp 2022</title>
+    <title>Field-FX 2022 - A Demoparty in an village at EMF Camp 2022</title>
 
     <link
       rel="icon"
@@ -19,6 +19,7 @@
     />
 
     <style>
+
       /* Anaheim */
       @font-face {
         font-family: "Anaheim";
@@ -90,7 +91,9 @@
 
       body {
         margin: 0;
-        background-color: #353b43;
+        /*background-color: #353b43;*/
+        background-color: #a4508b;
+        background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
       }
 
       .nav-container {
@@ -101,16 +104,58 @@
 	position: sticky;
 	height: 100px;
 	width: calc(100vw - (100vw - 100%));
-        background-color: #1d2024;
+        /*background-color: #1d2024;*/
+	background-color: #1e1e3f;
 	z-index: 100;
       }      
 
       .nav {
 	width: 960px;
+        font-family: quattrocento sans, sans-serif;
+	/*background-color:blue;*/
       }
 
-      .logo-small{
-        padding: 0 0 0 20px;
+      .nav ul {
+	display:;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .nav_left {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .nav_right {
+          float: right;
+          line-height: 100px;
+      }
+
+      .nav_left a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .nav_right a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+     .nav_left a:hover,.nav_right a:hover {
+        color: #929ea9;
+        cursor: pointer;
+      }
+
+      .nav_active {
+        /*color: #04AA6D;*/
       }
 
       .main {
@@ -121,38 +166,40 @@
       }
 
       .art {
-        background-color: #292f36;
+        /*background-color: #292f36;*/
+	background-color: #2d2b55;
         padding: 20px;
         margin: 15px 0 15px 0;
       }
 
-
-      .main h2 {
+      .art h2 {
         font-family: quattrocento sans, sans-serif;
         color: #fff;
       }
 
-      .main h3 {
+      .art h3 {
         font-family: quattrocento sans, sans-serif;
         color: #fff;
       }
 
-      .main p {
+      .art p {
         font-family: quattrocento sans, sans-serif;
-        color: #929ea9;
+        /*color: #929ea9;*/
+	color: #fff;
       }
 
-      .main a {
+      .art a {
         font-family: quattrocento sans, sans-serif;
         color: #fff;
       }
 
-      .main b {
-        color: #929ea9;
+      .art b {
+        /*color: #929ea9;*/
+	color: #ffffff;
         font-family: anaheim, sans-serif;
       }
 
-      .main a:hover {
+      .art a:hover {
         color: #138788;
       }
 
@@ -177,18 +224,27 @@
     <div class="nav-container">
 
       <nav class="nav">
-
-        <a class="logo-link" href="/">
-          <img class="logo-small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
-	</a>
+         
+	 <ul>
+	   <li class="nav_left">
+	     <a class="logo-link" href="/">
+               <img class="logo-small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
+	     </a>
+	   </li>
+           <li class="nav_left"><a href="#about">About</a></li>
+           <li class="nav_left"><a href="#compos">Compos</a></li>
+	   <li class="nav_left"><a href="#cc">CC</a></li>
+           <li class="nav_left"><a href="#contact">Contact</a></li>
+           <li class="nav_right"><a class="nav_active" href="/">2022</a></li>
+         </ul>
 
       </nav>
 
     </div>
 
-    <div class="main">
+    <main class="main">
 
-      <article class="art">
+      <article id="about" class="art">
         <h2>Field-FX 2022 - A demoparty in an tent at EMF Camp 2022</h2>
         <p>2nd - 6th June 2022, Eastnor Park, Ledbury, UK</p>
 
@@ -220,8 +276,10 @@
         </p>
 
         <h3>
-          Watch the amazing invite to Field-FX 2022 & Inércia 2022 by Slipstream
-          & ScenePt All Stars
+		Watch the amazing invite to 
+		<a href="/" target="_blank">Field-FX 2022</a> & 
+		<a href="https://inercia.pt" target="_blank">Inércia 2022</a> 
+		by Slipstream & ScenePt All Stars
         </h3>
         <div class="invite">
           <iframe
@@ -236,7 +294,7 @@
         </div>
       </article>
 
-      <article class="art">
+      <article id="compos" class="art">
         <h2>Competitions</h2>
         <h3>Demo</h3>
         <p>
@@ -282,7 +340,7 @@
         </p>
       </article>
 
-      <article class="art">
+      <article id="cc" class="art">
         <h2>Code of conduct</h2>
 
         <p>
@@ -306,7 +364,7 @@
         </p>
       </article>
 
-      <article class="art">
+      <article id="contact" class="art">
         <h2>Contact</h2>
         <p>
           <b> Email: </b>
@@ -316,7 +374,7 @@
         </p>
         <p>
           <b> Mastodon: </b>
-          <a rel ="me" href="https://mastodon.online/@FieldFX" target="_blank"
+          <a rel="me" href="https://mastodon.online/@FieldFX" target="_blank"
             >@FieldFX@mastodon.online</a
           >
         </p>
@@ -337,8 +395,10 @@
           >
         </p>
       </article>
-    </div>
+
+    </main>
 
     <script></script>
+
   </body>
 </html>
