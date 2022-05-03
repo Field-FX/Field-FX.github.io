@@ -91,9 +91,7 @@
 
       body {
         margin: 0;
-        /*background-color: #353b43;*/
-        background-color: #a4508b;
-        background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+        background-color: #353b43;
       }
 
       .nav-container {
@@ -104,33 +102,25 @@
 	position: sticky;
 	height: 100px;
 	width: calc(100vw - (100vw - 100%));
-        /*background-color: #1d2024;*/
-	background-color: #1e1e3f;
+        background-color: #1d2024;
 	z-index: 100;
       }      
 
       .nav {
 	width: 960px;
-        font-family: quattrocento sans, sans-serif;
-	/*background-color:blue;*/
+	background-color:blue;
       }
 
       .nav ul {
-	display:;
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
       }
 
-      .nav_left {
+      .nav {
         display: inline-block;
         vertical-align: middle;
-      }
-
-      .nav_right {
-          float: right;
-          line-height: 100px;
       }
 
       .nav_left a {
@@ -148,15 +138,9 @@
         padding: 14px 16px;
         text-decoration: none;
       }
+      
 
-     .nav_left a:hover,.nav_right a:hover {
-        color: #929ea9;
-        cursor: pointer;
-      }
-
-      .nav_active {
-        /*color: #04AA6D;*/
-      }
+      
 
       .main {
         display: block;
@@ -166,8 +150,7 @@
       }
 
       .art {
-        /*background-color: #292f36;*/
-	background-color: #2d2b55;
+        background-color: #292f36;
         padding: 20px;
         margin: 15px 0 15px 0;
       }
@@ -184,8 +167,7 @@
 
       .art p {
         font-family: quattrocento sans, sans-serif;
-        /*color: #929ea9;*/
-	color: #fff;
+        color: #929ea9;
       }
 
       .art a {
@@ -194,8 +176,7 @@
       }
 
       .art b {
-        /*color: #929ea9;*/
-	color: #ffffff;
+        color: #929ea9;
         font-family: anaheim, sans-serif;
       }
 
@@ -235,7 +216,7 @@
            <li class="nav_left"><a href="#compos">Compos</a></li>
 	   <li class="nav_left"><a href="#cc">CC</a></li>
            <li class="nav_left"><a href="#contact">Contact</a></li>
-           <li class="nav_right"><a class="nav_active" href="/">2022</a></li>
+           <li class="nav_right"><a class="active" href="/">2022</a></li>
          </ul>
 
       </nav>
@@ -244,7 +225,7 @@
 
     <main class="main">
 
-      <article id="about" class="art">
+      <article class="art">
         <h2>Field-FX 2022 - A demoparty in an tent at EMF Camp 2022</h2>
         <p>2nd - 6th June 2022, Eastnor Park, Ledbury, UK</p>
 
@@ -294,7 +275,7 @@
         </div>
       </article>
 
-      <article id="compos" class="art">
+      <article class="art">
         <h2>Competitions</h2>
         <h3>Demo</h3>
         <p>
@@ -340,7 +321,7 @@
         </p>
       </article>
 
-      <article id="cc" class="art">
+      <article class="art">
         <h2>Code of conduct</h2>
 
         <p>
@@ -364,7 +345,7 @@
         </p>
       </article>
 
-      <article id="contact" class="art">
+      <article class="art">
         <h2>Contact</h2>
         <p>
           <b> Email: </b>
