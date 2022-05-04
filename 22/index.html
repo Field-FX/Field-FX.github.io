@@ -20,73 +20,37 @@
 
     <style>
 
-      /* Anaheim */
+      /* font */
+	 	
       @font-face {
-        font-family: "Anaheim";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(fonts/8vII7w042Wp87g4G4U3eEX5e.woff2) format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        font-family: FiraCode;
+        src: url(fonts/FiraCode-Light.woff2);
+	font-style: normal;
+        font-weight: 300;
       }
-      /* Anaheim */
       @font-face {
-        font-family: "Anaheim";
-        font-style: normal;
+        font-family: FiraCode;
+        src: url(fonts/FiraCode-Regular.woff2);
+	font-style: normal;
         font-weight: 400;
-        font-display: swap;
-        src: url(fonts/8vII7w042Wp87g4G4UPeEQ.woff2) format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
       }
-
-      /* Quattrocento Sans */
       @font-face {
-        font-family: "Quattrocento Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(fonts/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        font-family: FiraCode;
+        src: url(fonts/FiraCode-Medium.woff2);
+	font-style: normal;
+        font-weight: 500;
       }
-      /* Quattrocento Sans */
       @font-face {
-        font-family: "Quattrocento Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(fonts/va9c4lja2NVIDdIAAoMR5MfuElaRB0zJt08.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
+        font-family: FiraCode;
+        src: url(fonts/FiraCode-SemiBold.woff2);
+	font-style: normal;
+        font-weight: 600;
       }
-      /* Quattrocento Sans */
       @font-face {
-        font-family: "Quattrocento Sans";
-        font-style: normal;
+        font-family: FiraCode;
+        src: url(fonts/FiraCode-Bold.woff2);
+	font-style: normal;
         font-weight: 700;
-        font-display: swap;
-        src: url(fonts/va9Z4lja2NVIDdIAAoMR5MfuElaRB0RyklrfPXzwiQ.woff2)
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      /* Quattrocento Sans */
-      @font-face {
-        font-family: "Quattrocento Sans";
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url(fonts/quattrocentosans/v17/va9Z4lja2NVIDdIAAoMR5MfuElaRB0RyklrRPXw.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
       body {
@@ -110,55 +74,19 @@
       }      
 
       .nav {
+        display: flex;  
+        justify-content: space-between;
+	align-items: center;
 	width: 960px;
         font-family: quattrocento sans, sans-serif;
 	/*background-color:blue;*/
       }
 
-      .nav ul {
-	display:;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+      .navbar li {
+        display: inline;
       }
 
-      .nav_left {
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      .nav_right {
-          float: right;
-          line-height: 100px;
-      }
-
-      .nav_left a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-
-      .nav_right a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-
-     .nav_left a:hover,.nav_right a:hover {
-        color: #929ea9;
-        cursor: pointer;
-      }
-
-      .nav_active a {
-        color: #04AA6D;
-      }
-
-      .nav_burger{
+      .burger{
         display: none;
       }
 
@@ -177,30 +105,30 @@
       }
 
       .art h2 {
-        font-family: quattrocento sans, sans-serif;
+        font-family: FiraCode;
         color: #fff;
       }
 
       .art h3 {
-        font-family: quattrocento sans, sans-serif;
+        font-family: FiraCode;
         color: #fff;
       }
 
       .art p {
-        font-family: quattrocento sans, sans-serif;
+        font-family: FiraCode;
         /*color: #929ea9;*/
 	color: #fff;
       }
 
       .art a {
-        font-family: quattrocento sans, sans-serif;
+        font-family: FiraCode;
         color: #fff;
       }
 
       .art b {
         /*color: #929ea9;*/
 	color: #ffffff;
-        font-family: anaheim, sans-serif;
+        font-family: FiraCode;
       }
 
       .art a:hover {
@@ -232,24 +160,6 @@
       only screen and (max-width: 1024px)
       {
 
-        .nav_compos,.nav_cc,.nav_contact,.nav_version{
-          display: none;
-	}
-	
-        .nav_burger {
-          display: initial;
-          float: right;
-          line-height: 100px;
-        }
-
-        .nav_burger a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
       }
     </style>
   </head>
@@ -257,25 +167,28 @@
 
     <div class="nav-container">
 
-      <nav class="nav">
+      <nav id="nav" class="nav">
          
-	 <ul>
-	   <li class="nav_left nav_link">
-	     <a class="logo-link" href="/">
-               <img class="logo-small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
-	     </a>
-	   </li>
-           <li class="nav_left nav_about"><a href="#about">About</a></li>
-           <li class="nav_left nav_compos"><a href="#compos">Compos</a></li>
-	   <li class="nav_left nav_cc"><a href="#cc">CC</a></li>
-           <li class="nav_left nav_contact"><a href="#contact">Contact</a></li>
-           <li class="nav_right nav_version"><a class="nav_active" href="#">2022</a></li>
-	   <li class="nav_burger">
-	     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-	       ☰
-             </a>
-	   </li>
-         </ul>
+        <div class="nav_logo">	 
+          <a href="/">
+            <img class="logo_small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
+          </a>
+        </div>
+	
+	<div class="navbar">
+	  <ul>
+           <li class="nav_about"><a href="#about">About</a></li>
+           <li class="nav_compos"><a href="#compos">Compos</a></li>
+	   <li class="nav_cc"><a href="#cc">CC</a></li>
+           <li class="nav_contact"><a href="#contact">Contact</a></li>
+           <li class="nav_version"><a class="nav_active" href="#">2022</a></li>
+	  </ul>
+        </div>
+	
+        <div class="menu">
+          <a href="javascript:void(0);" class="edition" onclick="menuFunc()">2020</a>
+          <a href="javascript:void(0);" class="burger" onclick="menuFunc()">☰</a>
+	</div>
 
       </nav>
 
@@ -451,6 +364,8 @@
 
     <script>
 
+      /*
+
       //Articles
       const nav_about = document.querySelector('.nav_about'),
             nav_compos = document.querySelector('.nav_compos'),
@@ -481,6 +396,17 @@
 	nav_active = cssClass;
       }
 
+      articleArray=[];
+      function burgerFunc(){
+        const x = document.getElementById("nav");
+        if (x.className === "nav") {
+          x.className += " nav_responsive";
+        } else {
+          x.className = "nav";
+        }
+      }
+      
+      */
     </script>
 
   </body>
