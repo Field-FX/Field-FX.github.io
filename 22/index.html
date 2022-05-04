@@ -60,7 +60,7 @@
         background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
       }
 
-      .nav-container {
+      .nav_container {
 	display: flex;
 	align-items: center;
         justify-content: center;
@@ -112,6 +112,7 @@
       .menu a {
 	padding: 0 20px 0 0;
         color: white;
+	font-size: 3em;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -122,8 +123,14 @@
         cursor: pointer;
       }
 
-      .burger{
+      .menu_dropdown {
         display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
       }
 
       .main {
@@ -201,7 +208,7 @@
   </head>
   <body>
 
-    <div class="nav-container">
+    <div class="nav_container">
 
       <nav id="nav" class="nav">
          
@@ -221,8 +228,23 @@
         </div>
 	
         <div class="menu">
-          <a href="javascript:void(0);" class="edition" onclick="menuFunc()">2020</a>
           <a href="javascript:void(0);" class="burger" onclick="menuFunc()">☰</a>
+	  <div class="menu_dropdown">
+	    <ul class="menu_main">
+              <li>about</li>
+	      <li>compos</li>
+	      <li>cc</li>
+	      <li>contact</li>
+              <li>Parties
+                <ul class="menu_sub">
+                  <li>2022</li>
+                  <li>2021</li>
+		  <li>2020</li>
+		  <li>2018</li>
+                </ul>
+              </li>
+            </ul>
+	  </div>
 	</div>
 
       </nav>
@@ -426,19 +448,18 @@
 	navbar_active = cssClass;
       }
 
-      /*
-
-      articleArray=[];
-      function burgerFunc(){
-        const x = document.getElementById("nav");
-        if (x.className === "nav") {
-          x.className += " nav_responsive";
+      function menuFunc() {
+        const x = document.querySelector(".menu_dropdown");
+	//const nav_container = document.querySelector(".nav_container") 
+        if (x.style.display === "block") { 
+          x.style.display = "none";
+	  //nav_container.style.height = "100px";
         } else {
-          x.className = "nav";
+          x.style.display = "block";
+	  //nav_container.style.height = "300px";
         }
       }
-      
-      */
+
     </script>
 
   </body>
