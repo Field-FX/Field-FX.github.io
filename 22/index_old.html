@@ -62,6 +62,7 @@
 
       .nav_container {
 	display: flex;
+	align-items: center;
         justify-content: center;
 	top: 0;
 	position: sticky;
@@ -72,26 +73,78 @@
 	z-index: 100;
       }      
 
-      .nav {      
+      .nav {
         display: flex; 
+	flex-direction: row;
+	flex-wrap: nowrap;
+        justify-content: start;
+	align-content: stretch;
 	align-items: center;
 	width: 960px;
         font-family: FiraCode, monospace;
 	/*background-color:blue;*/
       }
 
-
-      .nav_left img {
+      .nav_logo img {
         padding: 0 0 0 20px;
       }
 
-      .nav_active {
-        background-color: #04AA6D;
+      .navbar a{
         color: white;
       }
 
-      .nav_right {
-        margin-left:auto;
+      .navbar li {
+        display: inline;
+      }
+
+      .navbar li a {
+        text-align: center;
+        padding: 0 20px 0 0;
+        text-decoration: none;
+      }
+
+      .navbar li a:hover {
+        color: #929ea9;
+        cursor: pointer;
+      }
+
+      .navbar_active a {
+        color: #04AA6D;
+      }
+
+      .menu {
+	      margin-left: auto;
+        position: relative;
+        display: inline-block;
+      }
+      .menu_main {
+        display: none;
+      }
+
+      .menu_span {
+        color: white;
+      }
+      
+      .menu_burger {
+	color: white;
+	font-size: 3em;
+	text-decoration: none;
+      }
+
+      .menu_span:hover,.menu_burger:hover {
+        color: #929ea9;
+        cursor: pointer;
+      }
+
+      .menu_dropdown {
+        display: none;
+        position: absolute;
+        left: auto;
+        right: 0;
+	min-width: 200px;
+	margin:13px 0 0 0;
+	background-color: #ffffff;
+	z-index: 1;
       }
 
       .main {
@@ -158,36 +211,13 @@
         height: 100%;
       }
 
-      .footer_container{
-        display: flex;	
-        justify-content: center;	
-	width: calc(100vw - (100vw - 100%));
-	background-color: #B362FF;
-      }
-
-      footer{
-        display: flex;
-	flex-direction: column;
-	align-items: center;
-        justify-content: center;
-	width: 960px;
-        font-family: FiraCode, monospace;
-      }
-
-
-
        /* small screens */
       @media only screen and (max-width: 640px),
       only screen and (max-width: 768px),
       only screen and (max-width: 1024px)
       {
-        .nav_inactive {
-	  display: none;
-	  background-color: pink;
-	}
 
       }
-
     </style>
   </head>
   <body>
@@ -196,22 +226,45 @@
 
       <nav id="nav" class="nav">
          
-        <div class="nav_left">	 
+        <div class="nav_logo">	 
           <a href="/">
             <img class="logo_small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
           </a>
         </div>
 	
-	<div class="nav_middle">
-          <a class="nav_about nav_inactive" href="#about">About</a>
-          <a class="nav_compos nav_inactive" href="#compos">Compos</a>
-	  <a class="nav_cc nav_inactive" href="#cc">CC</a>
-          <a class="nav_contact nav_inactive" href="#contact">Contact</a>
-	</div>
-
-	<div class="nav_right">
-	  <a href="javascript:void(0);" class="nav_current" onclick="menuFunc()">2022</a>
-          <a href="javascript:void(0);" class="menu_burger" onclick="menuFunc()">☰</a>
+	<div class="navbar">
+	  <ul>
+           <li class="nav_about"><a href="#about">About</a></li>
+           <li class="nav_compos"><a href="#compos">Compos</a></li>
+	   <li class="nav_cc"><a href="#cc">CC</a></li>
+           <li class="nav_contact"><a href="#contact">Contact</a></li>
+	  </ul>
+        </div>
+	
+        <div class="menu">
+	  <p class="menu_display">
+	    <span class="menu_span">2020</span>
+            <a href="javascript:void(0);" class="menu_burger" onclick="menuFunc()">
+	     ☰
+	    </a>
+          </p>
+	  <div class="menu_dropdown">
+	    <ul class="menu_main">
+              <li><a href="#about">About</a></li>
+              <li><a href="#compos">Compos</a></li>
+	      <li><a href="#cc">CC</a></li>
+              <li><a href="#contact">Contact</a></li> 
+            </ul>
+            <ul class="menu_parties">
+	      <li><a href="/">2022</a></li>
+	      <li><a href="/">London-FX</a></li>
+	      <li><a href="/">Silvester</a></li>
+	      <li><a href="/">2020</a></li>
+              <li><a href="/">2018</a></li>
+            </ul>
+              </li>
+            </ul>
+	  </div>
 	</div>
 
       </nav>
@@ -386,21 +439,6 @@
 
     </main>
 
-    <div class="footer_container">
-      <footer>
-
-	<div class="footer_links">
-	</div>
-
-        <div class="footer_logo">	 
-          <a href="/">
-            <img data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
-          </a>
-        </div>
-
-      </footer>
-    </div>
-
     <script>
 
       //Articles
@@ -422,20 +460,13 @@
         toggleActive(nav_contact);
       });
 
-      let preActive = nav_about;;    
+      let navbar_active = nav_about;    
       function toggleActive(cssClass) {
-        console.log("click",)
-	
-	if (preActive.classList.contains("nav_active")){
-	  preActive.classList.remove("nav_active");
-        }
-	cssClass.classList.remove("nav_inactive");
-        cssClass.classList.add("nav_active");
-	preActive = cssClass;
+	console.log("click")
+	navbar_active.classList.remove("navbar_active");
+        cssClass.classList.add("navbar_active");
+	navbar_active = cssClass;
       }
-
-	    var hash = window.location.hash;
-      console.log("hash: "); // Returns '#Examples'
 
       function menuFunc() {
         const x = document.querySelector(".menu_dropdown");
