@@ -19,37 +19,36 @@
     />
 
     <style>
-
       /* font */
-	 	
+
       @font-face {
         font-family: FiraCode;
         src: url(fonts/FiraCode-Light.woff2);
-	font-style: normal;
+        font-style: normal;
         font-weight: 300;
       }
       @font-face {
         font-family: FiraCode;
         src: url(fonts/FiraCode-Regular.woff2);
-	font-style: normal;
+        font-style: normal;
         font-weight: 400;
       }
       @font-face {
         font-family: FiraCode;
         src: url(fonts/FiraCode-Medium.woff2);
-	font-style: normal;
+        font-style: normal;
         font-weight: 500;
       }
       @font-face {
         font-family: FiraCode;
         src: url(fonts/FiraCode-SemiBold.woff2);
-	font-style: normal;
+        font-style: normal;
         font-weight: 600;
       }
       @font-face {
         font-family: FiraCode;
         src: url(fonts/FiraCode-Bold.woff2);
-	font-style: normal;
+        font-style: normal;
         font-weight: 700;
       }
 
@@ -61,32 +60,32 @@
       }
 
       .nav-container {
-	display: flex;
-	align-items: center;
+        display: flex;
+        align-items: center;
         justify-content: center;
-	top: 0;
-	position: sticky;
-	height: 100px;
-	width: calc(100vw - (100vw - 100%));
+        top: 0;
+        position: sticky;
+        height: 100px;
+        width: calc(100vw - (100vw - 100%));
         /*background-color: #1d2024;*/
-	background-color: #1e1e3f;
-	z-index: 100;
-      }      
+        background-color: #1e1e3f;
+        z-index: 100;
+      }
 
       .nav {
-        display: flex;  
+        display: flex;
         justify-content: space-between;
-	align-items: center;
-	width: 960px;
+        align-items: center;
+        width: 960px;
         font-family: FiraCode, monospace;
-	/*background-color:blue;*/
+        /*background-color:blue;*/
       }
 
       .nav_logo img {
         padding: 0 0 0 20px;
       }
 
-      .navbar a{
+      .navbar a {
         color: white;
       }
 
@@ -106,11 +105,11 @@
       }
 
       .navbar_active a {
-        color: #04AA6D;
+        color: #04aa6d;
       }
-      
+
       .menu a {
-	padding: 0 20px 0 0;
+        padding: 0 20px 0 0;
         color: white;
         text-align: center;
         padding: 14px 16px;
@@ -122,7 +121,7 @@
         cursor: pointer;
       }
 
-      .burger{
+      .burger {
         display: none;
       }
 
@@ -135,7 +134,7 @@
 
       .art {
         /*background-color: #292f36;*/
-	background-color: #2d2b55;
+        background-color: #2d2b55;
         padding: 20px;
         margin: 15px 0 15px 0;
       }
@@ -151,29 +150,32 @@
       }
 
       .art p {
-        font-family: FiraCode, monospace;;
+        font-family: FiraCode, monospace;
         /*color: #929ea9;*/
-	color: #fff;
+        color: #fff;
       }
 
       .art a {
-        font-family: FiraCode, monospace;;
+        font-family: FiraCode, monospace;
         color: #fff;
       }
 
       .art b {
         /*color: #929ea9;*/
-	color: #ffffff;
-        font-family: FiraCode, monospace;;
+        color: #ffffff;
+        font-family: FiraCode, monospace;
       }
 
       .art a:hover {
         color: #138788;
       }
 
-      #about, #compos, #cc, #contact {
+      #about,
+      #compos,
+      #cc,
+      #contact {
         scroll-margin-top: 112.5px;
-      } 
+      }
 
       .invite {
         position: relative;
@@ -190,54 +192,93 @@
         height: 100%;
       }
 
-       /* small screens */
-      @media only screen and (max-width: 640px),
-      only screen and (max-width: 768px),
-      only screen and (max-width: 1024px)
-      {
+      .schedulegrid {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        color: white;
+        font-family: FiraCode, monospace;
+        margin-bottom: 3rem;
+      }
 
+      .schedulegrid h3 {
+        grid-column: 1 / 3;
+        padding-top: 1rem;
+        margin-top: 2rem;
+        border-top: 1px solid white;
+        width: 100%;
+      }
+
+      .schedulegrid h4 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .schedulegrid .time {
+        grid-column-start: 1;
+        padding-right: 2rem;
+        margin-top: 2rem;
+        margin-left: 3rem;
+      }
+
+      .schedulegrid p {
+        margin-top: 0;
+      }
+
+      /* small screens */
+      @media only screen and (max-width: 640px),
+        only screen and (max-width: 768px),
+        only screen and (max-width: 1024px) {
       }
     </style>
   </head>
   <body>
-
     <div class="nav-container">
-
       <nav id="nav" class="nav">
-         
-        <div class="nav_logo">	 
+        <div class="nav_logo">
           <a href="/">
-            <img class="logo_small" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png" data-loaded="true" height="100">
+            <img
+              class="logo_small"
+              data-src="images/logo.png"
+              alt="Field-FX Logo"
+              src="images/logo.png"
+              data-loaded="true"
+              height="100"
+            />
           </a>
         </div>
-	
-	<div class="navbar">
-	  <ul>
-           <li class="nav_about"><a href="#about">About</a></li>
-           <li class="nav_compos"><a href="#compos">Compos</a></li>
-	   <li class="nav_cc"><a href="#cc">CC</a></li>
-           <li class="nav_contact"><a href="#contact">Contact</a></li>
-	  </ul>
+
+        <div class="navbar">
+          <ul>
+            <li class="nav_about"><a href="#about">About</a></li>
+            <li class="nav_schedule"><a href="#schedule">Schedule</a></li>
+            <li class="nav_compos"><a href="#compos">Compos</a></li>
+            <li class="nav_cc"><a href="#cc">CoC</a></li>
+            <li class="nav_contact"><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-	
+
         <div class="menu">
-          <a href="javascript:void(0);" class="edition" onclick="menuFunc()">2020</a>
-          <a href="javascript:void(0);" class="burger" onclick="menuFunc()">☰</a>
-	</div>
-
+          <a href="javascript:void(0);" class="edition" onclick="menuFunc()"
+            >2020</a
+          >
+          <a href="javascript:void(0);" class="burger" onclick="menuFunc()"
+            >☰</a
+          >
+        </div>
       </nav>
-
     </div>
 
     <main class="main">
-
       <article id="about" class="art">
         <h2>Field-FX 2022 - A demoparty in an tent at EMF Camp 2022</h2>
         <p>2nd - 6th June 2022, Eastnor Park, Ledbury, UK</p>
 
         <p>
-	  <a href="http://demoscene-the-art-of-coding.net/the-demoscene/" target="_blank">demoscene</a>,
-          a digital <s>frontier</s> arts subculture. And EMF Camp, a festival
+          <a
+            href="http://demoscene-the-art-of-coding.net/the-demoscene/"
+            target="_blank"
+            >demoscene</a
+          >, a digital <s>frontier</s> arts subculture. And EMF Camp, a festival
           for hackers and creative people to gather, party, and share knowledge.
           We're throwing a demoparty, and everyone at EMF Camp is invited to
           watch, to make entries, and to have a great time. There's a saying on
@@ -263,10 +304,10 @@
         </p>
 
         <h3>
-		Watch the amazing invite to 
-		<a href="/" target="_blank">Field-FX 2022</a> & 
-		<a href="https://inercia.pt" target="_blank">Inércia 2022</a> 
-		by Slipstream & ScenePt All Stars
+          Watch the amazing invite to
+          <a href="/" target="_blank">Field-FX 2022</a> &
+          <a href="https://inercia.pt" target="_blank">Inércia 2022</a>
+          by Slipstream & ScenePt All Stars
         </h3>
         <div class="invite">
           <iframe
@@ -279,6 +320,83 @@
             allowfullscreen
           ></iframe>
         </div>
+      </article>
+
+      <article id="schedule" class="art">
+        <h2>Schedule</h2>
+        <p>
+          June 2022, British Summer Time. All events will be streamed to
+          <a href="https://twitch.tv/fieldfxdemo" target="_blank"
+            >twitch.tv/fieldfxdemo</a
+          >
+          unless otherwise advised.
+        </p>
+        <div class="schedulegrid">
+          <h3>Friday</h3>
+          <div class="time">12:00</div>
+          <div>
+            <h4>Deadline for remote entries</h4>
+          </div>
+          <div class="time">15:40</div>
+          <div>
+            <h4>Introduction to the demoscene (EMF stage A)</h4>
+            <p>
+              Find out what the demoscene is all about, and how you can get
+              involved.
+            </p>
+          </div>
+          <h3>Saturday</h3>
+          <div class="time">10:00</div>
+          <div>
+            <h4>Saturday Morning Demoshow (Field-FX tent)</h4>
+            <p>
+              Wake up with demos and good vibes, and maybe a bit of a tour of
+              EMF Camp
+            </p>
+          </div>
+          <div class="time">12:00</div>
+          <div>
+            <h4>Deadline for onsite entries</h4>
+          </div>
+
+          <div class="time">19:00</div>
+          <div>
+            <h4>Competitions (Field-FX tent)</h4>
+            <p>The provisional compo order is:</p>
+            <ul>
+              <li>Young people's compo</li>
+              <li>Graphics</li>
+              <li>Music</li>
+              <li>Wild</li>
+              <li>Microcontrollers and Badge demos</li>
+              <li>Demo</li>
+              <li>Mixed-in UK Garage (dance the night away)</li>
+            </ul>
+          </div>
+
+          <h3>Sunday</h3>
+          <div class="time">16:40</div>
+          <div>
+            <h4>Competition winners and screening (EMF stage B)</h4>
+            <p>
+              The results and winners of the Field-FX weekend demo competitions.
+              We will show all the best demos and other productions and
+              highlights from all the best submitted over the course of the
+              festival.
+            </p>
+          </div>
+
+          <h3>To be scheduled...</h3>
+          <div class="time"></div>
+          <div>
+            <h4>Shader Showdown and Byte Battle</h4>
+            <p>Competitive live coding visuals on GLSL and TIC-80.</p>
+          </div>
+        </div>
+        <p>
+          All times are subject to change. This is a party! We'll endeavour keep
+          this page up to date with any changes.
+        </p>
       </article>
 
       <article id="compos" class="art">
@@ -309,18 +427,15 @@
           you! Scratch demos, animations, music, photography, whatever you shine
           at.
         </p>
-	<h3>Music</h3>
-	<p>
-          If it makes sound you can enter it.
-	  Max running time 5 minutes.
-	</p>
-	<h3>Music UK Garage - live mixed</h3>
-	<p>
-	  Anything goes as long as it's UK Garage and under 5 minutes.
-	  The entries might not be played in full by the DJ, it's up to them.
-	  If there are not enough entries for a DJ set, the entires will be 
-    combined with the music compo.
-	</p>
+        <h3>Music</h3>
+        <p>If it makes sound you can enter it. Max running time 5 minutes.</p>
+        <h3>Music UK Garage - live mixed</h3>
+        <p>
+          Anything goes as long as it's UK Garage and under 5 minutes. The
+          entries might not be played in full by the DJ, it's up to them. If
+          there are not enough entries for a DJ set, the entires will be
+          combined with the music compo.
+        </p>
         <h3>Graphics</h3>
         <p>
           If it can be displayed on a projector screen and it doesn't move,it's
@@ -394,36 +509,38 @@
           >
         </p>
       </article>
-
     </main>
 
     <script>
-
       //Articles
-      const nav_about = document.querySelector('.nav_about'),
-            nav_compos = document.querySelector('.nav_compos'),
-            nav_cc = document.querySelector('.nav_cc'),
-            nav_contact = document.querySelector('.nav_contact');
+      const nav_about = document.querySelector(".nav_about"),
+        nav_schedule = document.querySelector(".nav_schedule"),
+        nav_compos = document.querySelector(".nav_compos"),
+        nav_cc = document.querySelector(".nav_cc"),
+        nav_contact = document.querySelector(".nav_contact");
 
-      nav_about.addEventListener('click', function() {
+      nav_about.addEventListener("click", function () {
         toggleActive(nav_about);
       });
-      nav_compos.addEventListener('click', function() {
+      nav_schedule.addEventListener("click", function () {
+        toggleActive(nav_schedule);
+      });
+      nav_compos.addEventListener("click", function () {
         toggleActive(nav_compos);
       });
-      nav_cc.addEventListener('click', function() {
+      nav_cc.addEventListener("click", function () {
         toggleActive(nav_cc);
       });
-      nav_contact.addEventListener('click', function() {
+      nav_contact.addEventListener("click", function () {
         toggleActive(nav_contact);
       });
 
-      let navbar_active = nav_about;    
+      let navbar_active = nav_about;
       function toggleActive(cssClass) {
-	console.log("click")
-	navbar_active.classList.remove("navbar_active");
+        console.log("click");
+        navbar_active.classList.remove("navbar_active");
         cssClass.classList.add("navbar_active");
-	navbar_active = cssClass;
+        navbar_active = cssClass;
       }
 
       /*
@@ -440,6 +557,5 @@
       
       */
     </script>
-
   </body>
 </html>
