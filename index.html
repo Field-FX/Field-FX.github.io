@@ -513,35 +513,38 @@
 
     <script>
       //Articles
-      const nav_about = document.querySelector(".nav_about"),
-        nav_schedule = document.querySelector(".nav_schedule"),
-        nav_compos = document.querySelector(".nav_compos"),
-        nav_cc = document.querySelector(".nav_cc"),
-        nav_contact = document.querySelector(".nav_contact");
+      const navSelectors = [
+        document.querySelector(".nav_about"),
+        document.querySelector(".nav_schedule"),
+        document.querySelector(".nav_compos"),
+        document.querySelector(".nav_cc"),
+        document.querySelector(".nav_contact"),
+      ];
 
-      nav_about.addEventListener("click", function () {
-        toggleActive(nav_about);
-      });
-      nav_schedule.addEventListener("click", function () {
-        toggleActive(nav_schedule);
-      });
-      nav_compos.addEventListener("click", function () {
-        toggleActive(nav_compos);
-      });
-      nav_cc.addEventListener("click", function () {
-        toggleActive(nav_cc);
-      });
-      nav_contact.addEventListener("click", function () {
-        toggleActive(nav_contact);
-      });
+      const sections = navSelectors.map((qs) =>
+        document.getElementById(qs.querySelector("a").href.split("#")[1])
+      );
 
-      let navbar_active = nav_about;
+      let navbar_active = navSelectors[0];
       function toggleActive(cssClass) {
-        console.log("click");
         navbar_active.classList.remove("navbar_active");
         cssClass.classList.add("navbar_active");
         navbar_active = cssClass;
       }
+
+      function activateFocused() {
+        const foldPosition = document.documentElement.clientHeight / 2;
+        for (const sectionI in sections) {
+          if (
+            sections[sectionI].getBoundingClientRect().bottom > foldPosition
+          ) {
+            toggleActive(navSelectors[sectionI]);
+            break;
+          }
+        }
+      }
+
+      document.onscroll = activateFocused;
 
       /*
 
