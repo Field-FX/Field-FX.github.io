@@ -4,11 +4,89 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Field-FX - A Demoscene collective</title>
-    <style> 
+    <style>
+      body{
+        margin: 0;
+      }
+      .grid {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 10% 10% 1fr 10%;
+        grid-template-columns: auto 80% auto;
+        grid-template-areas: "header header   header  "
+                             ".      upcoming .        "
+                             ".      main     .       "
+                             "footer footer   footer  ";
+      }
+      .header {
+        grid-area: header;
+        background-color: grey;
+      }
+      .upcoming {
+        background: #DBD0BC;
+        overflow-x: auto; 
+        display: grid;
+        grid-area: upcoming;
+        grid-gap: 1rem;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% - 4rem);
+        /*height: 100px;*/
+        padding: 20px;
+      }
+      .upcoming article {
+        background-color: blue;
+        border-radius: 25px;
+      }
+      .main {
+        display: grid;
+        grid-template-areas: "content sidebar";
+        grid-template-columns: 80% 20%;
+        grid-template-rows: auto;
+        grid-area: main;
+        background-color: lime;
+      }
+      .content {
+        grid-area: content;
+        background-color: violet;
+      }
+      .sidebar {
+        grid-area: sidebar;
+        background-color: blueviolet;
+      }
+      .footer {
+        grid-area: footer;
+        background-color: gray;
+      }
     </style>
   </head>
-  <body>
-    <h1>Field-FX - A Demoscene collective</h1>
+  <body>    
+    <div class="grid"> 
+      <header class="header">
+        <h1>Header<h1>
+      </header>
+      <div class="upcoming">
+        <article>
+          <p> stream </p>
+        </article>
+        <article>
+          <p> byte </p>
+        </article>
+        <article>
+          <p> sat </p> 
+        </article>
+      </div>
+      <main class="main">
+        <div class="content">
+          <h1>Main</h1>
+        </div>
+        <div class="sidebar">
+          <h1>Sidebar</h1>
+        </div>
+      </main>
+      <footer class="footer">
+        <h1>Footer</h1>
+      </footer>
+    </div>
     <script>
     </script>
   </body>
