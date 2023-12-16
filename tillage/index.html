@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Field-FX 2024 - A Demoparty in an village at EMF Camp 2024</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+
+  <style>
+    /* font */
+
+    @font-face {
+      font-family: FiraCode;
+      src: url(fonts/FiraCode-Light.woff2);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: FiraCode;
+      src: url(fonts/FiraCode-Regular.woff2);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: FiraCode;
+      src: url(fonts/FiraCode-Medium.woff2);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: FiraCode;
+      src: url(fonts/FiraCode-SemiBold.woff2);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: FiraCode;
+      src: url(fonts/FiraCode-Bold.woff2);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    body {
+      margin: 0;
+      /*background-color: #353b43;*/
+      background-color: #8887a2;
+      background-image: linear-gradient(326deg, #9a78b7 0%, #8887a2 74%);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      position: sticky;
+      height: 100px;
+      width: calc(100vw - (100vw - 100%));
+      /*background-color: #1d2024;*/
+      background-color: #1e1e3f;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 960px;
+      font-family: FiraCode, monospace;
+      /*background-color:blue;*/
+    }
+
+    .nav_logo img {
+      padding: 0 0 0 20px;
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    .navbar li {
+      display: inline;
+    }
+
+    .navbar li a {
+      text-align: center;
+      padding: 0 20px 0 0;
+      text-decoration: none;
+    }
+
+    .navbar li a:hover {
+      color: #929ea9;
+      cursor: pointer;
+    }
+
+    .navbar_active a {
+      color: #04aa6d;
+    }
+
+    .menu a {
+      padding: 0 20px 0 0;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      color: #929ea9;
+      cursor: pointer;
+    }
+
+    .nav_party {
+      position: relative;
+    }
+
+    .nav_party ul.dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; /* Position the dropdown below the "Parties" link */
+      left: 0;
+      background-color: #1e1e3f;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    .nav_party ul.dropdown li {
+      display: block;
+    }
+
+
+  .nav_party ul.dropdown {
+    padding: 0px; /* Adjust as needed */
+    margin: 0; /* Remove any default margin */
+  }
+
+    .nav_party ul.dropdown.show-dropdown {
+      display: block;
+    }
+
+
+    .burger {
+      display: none;
+    }
+
+    .main {
+      display: block;
+      width: 960px;
+      max-width: 100%;
+      margin: 0 auto 0;
+    }
+
+    
+
+    .art {
+      /*background-color: #292f36;*/
+      background-color: #2d2b55;
+      padding: 3rem;
+      margin: 15px 0 40px 0;
+      filter: drop-shadow(5px 5px 15px)
+    }
+
+    .art h2 {
+      font-family: FiraCode, monospace;
+      color: #fff;
+    }
+
+    .art h3 {
+      font-family: FiraCode, monospace;
+      color: #fff;
+    }
+
+    .art p {
+      font-family: FiraCode, monospace;
+      /*color: #929ea9;*/
+      color: #fff;
+    }
+
+    .art a {
+      font-family: FiraCode, monospace;
+      color: #fff;
+    }
+
+    .art b {
+      /*color: #929ea9;*/
+      color: #ffffff;
+      font-family: FiraCode, monospace;
+    }
+
+    .art a:hover {
+      color: #138788;
+    }
+
+    #about,
+    #compos,
+    #cc,
+    #mnb,
+    #contact {
+      scroll-margin-top: 112.5px;
+    }
+
+    .invite {
+      position: relative;
+      width: 100%;
+      height: 0%;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+    }
+
+    .invite iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .schedulegrid {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      color: white;
+      font-family: FiraCode, monospace;
+      margin-bottom: 3rem;
+    }
+
+    .schedulegrid h3 {
+      grid-column: 1 / 3;
+      padding-top: 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid white;
+      width: 100%;
+    }
+
+    .schedulegrid h4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .schedulegrid .time {
+      grid-column-start: 1;
+      padding-right: 2rem;
+      margin-top: 2rem;
+      margin-left: 3rem;
+    }
+
+    .schedulegrid p {
+      margin-top: 0;
+    }
+
+    /* small screens */
+    @media only screen and (max-width: 640px),
+    only screen and (max-width: 768px),
+    only screen and (max-width: 1024px) {
+      .art {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-container">
+    <nav id="nav" class="nav">
+      <div class="nav_logo">
+        <a href="/">
+          <img class="logo_small" data-src="images/logo.png" alt="Field-FX Logo" src="../images/logo.png"
+            data-loaded="true" height="100" />
+        </a>
+      </div>
+
+      <div class="navbar">
+        <ul>
+          <li class="nav_about"><a href="#about">About</a></li>
+          <!--<li class="nav_schedule"><a href="#schedule">Schedule</a></li>
+          <li class="nav_compos"><a href="#compos">Compos</a></li>-->
+          <li class="nav_cc"><a href="#cc">CoC</a></li>
+          <li class="nav_contact"><a href="#contact">Contact</a></li>
+          <li class="nav_mnb"><a href="#mnb">Jams</a></li>
+          <li class="nav_party">
+            <a href="#">Parties</a>
+            <ul class="dropdown">
+              <li class="nav_party"><a href="2024">2024</a></li>
+              <li class="nav_party"><a href="22">2022</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main class="main">
+    <article id="about" class="art">
+      <h2>Field-FX 2024 - A demoparty in an tent at EMF Camp 2024</h2>
+      <p>30th May - 2nd June 2024, Eastnor Park, Ledbury, UK</p>
+
+      <p>
+        <a href="http://demoscene-the-art-of-coding.net/the-demoscene/" target="_blank">demoscene</a>, a digital
+        <s>frontier</s> arts subculture. And EMF Camp, a festival
+        for hackers and creative people to gather, party, and share knowledge.
+        We're throwing a demoparty, and everyone at EMF Camp is invited to
+        watch, to make entries, and to have a great time. There's a saying on
+        the scene, "the real party is outside." Well it doesn't get any more
+        outside than this!
+      </p>
+
+      <p>
+        Our goal is to bring the spirit of the demoscene to more people, and
+        to encourage creativity. We hope you will join us!
+      </p>
+
+      <p>
+        Anyone who has a ticket to EMF Camp can join us on site. If you want
+        to watch remotely, we will be streaming the event on
+        <a href="https://twitch.tv/fieldfxdemo" target="_blank">Twitch</a>. To
+        submit entries (please submit entries!) we will be announcing our
+        partynet nearer the event. We are not charging for anything, but
+        <a href="https://www.emfcamp.org/tickets" target="_blank">
+          EMF tickets</a>
+        are sold separately.
+      </p>
+
+    </article><!--
+    <article id="schedule" class="art">
+      <h2>Schedule</h2>
+      <p>TBD
+      </p>
+    </article>
+
+    <article id="compos" class="art">
+      <h2>Competitions</h2>
+      <p>TBD
+      </p>
+    </article>-->
+    <article id="mnb" class="art">
+      <h2>Monday Night Bytes</h2>
+      <p>
+        We have a regular Monday night jam at around 8 or 9pm UK time, on our <a href="https://twitch.tv/FieldFxDemo"
+          target="_blank">twitch channel</a>
+      </p>
+      <p>The purpose of the jams is to give people a chance to practice together, without the pressure of a demoparty
+        event. Also it's a chance to hang out with the scene community and to learn from each other.</p>
+      <p>We host two types of jam. Byte Jams are the most common - using <a href="https://tic80.com"
+          target="_blank">TIC-80</a>, a fantasy console that facilitates learning and pixel drawing. The other kind is
+        Shader Jams using <a href="https://github.com/TheNuSan/Bonzomatic" target="_blank">Bonzomatic</a>. This uses <a
+          href="https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders"
+          target="_blank">GLSL</a>, which is a powerful GPU language used in computer graphics and game development.</p>
+      <p>We encourage anyone who wants to try! If you're interested, please let us know, or find out more by
+        following the announcements on our social media channels.</p>
+    </article>
+
+    <article id="cc" class="art">
+      <h2>Code of conduct</h2>
+
+      <p>
+        We are committed to making Field FX an inclusive and welcoming event.
+        Unfortunately, sometimes harassment happens. While we are present on
+        site at EMF Camp we are all subject to the
+        <a href="https://www.emfcamp.org/code-of-conduct" target="_blank">
+          EMF Camp Code of Conduct</a>
+        and our organisers are invested in supporting it.
+      </p>
+      <p>
+        We will also be extending the same Code of Conduct to our party
+        stream. Moderators will be present in online channels operated by
+        Field FX and their identity will be established by a group message at
+        regular intervals throughout the stream. Tagging them in your message
+        will elicit a response. During a stream we aim to reach a decision on
+        all conduct issues within 10 minutes. Outside of channels operated by
+        us we cannot guarantee support. All reports will be taken seriously
+        and will be considered in confidence by our team.
+      </p>
+    </article>
+
+    <article id="contact" class="art">
+      <h2>Contact</h2>
+      <p>
+        <b> Email: </b>
+        <a href="mailto: fieldfxparty+2024@gmail.com">fieldfxparty+2024@gmail.com</a>
+      </p>
+      <p>
+        <b> Mastodon: </b>
+        <a rel="me" href="https://mastodon.online/@FieldFX" target="_blank">@FieldFX@mastodon.online</a>
+      </p>
+      <p>
+        <b> Twitter: </b>
+        <a href="https://twitter.com/fx_field" target="_blank">@fx_field</a>
+      </p>
+      <!-- 
+	<p>
+          <b> Facebook: </b>
+          <a href="https://fb.me/e/3bOFkNP0o" target="_blank">Facebook</a>
+       </p> 
+       -->
+      <p>
+        <b> Discord: </b>
+        <a href="https://discord.com/invite/RuSxTNzhZS" target="_blank">Discord</a>
+      </p>
+    </article>
+  </main>
+
+  <script>
+    //Articles
+    const navSelectors = [
+      document.querySelector(".nav_about"),
+      //document.querySelector(".nav_schedule"),
+      //document.querySelector(".nav_compos"),
+      document.querySelector(".nav_mnb"),
+      document.querySelector(".nav_cc"),
+      document.querySelector(".nav_contact"),
+    ];
+
+    const sections = navSelectors.map((qs) =>
+      document.getElementById(qs.querySelector("a").href.split("#")[1])
+    );
+
+    let navbar_active = navSelectors[0];
+    function toggleActive(cssClass) {
+      navbar_active.classList.remove("navbar_active");
+      cssClass.classList.add("navbar_active");
+      navbar_active = cssClass;
+    }
+
+    function activateFocused() {
+      const foldPosition = document.documentElement.clientHeight / 2;
+      for (const sectionI in sections) {
+        if (
+          sections[sectionI].getBoundingClientRect().bottom > foldPosition
+        ) {
+          toggleActive(navSelectors[sectionI]);
+          break;
+        }
+      }
+    }
+
+    document.onscroll = activateFocused;
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const partiesDropdown = document.querySelector(".nav_party");
+    const partiesSubMenu = document.querySelector(".nav_party ul.dropdown");
+
+    partiesDropdown.addEventListener("click", function () {
+      partiesSubMenu.classList.toggle("show-dropdown");
+    });
+  });
+
+    /*
+
+    articleArray=[];
+    function burgerFunc(){
+      const x = document.getElementById("nav");
+      if (x.className === "nav") {
+        x.className += " nav_responsive";
+      } else {
+        x.className = "nav";
+      }
+    }
+    
+    */
+  </script>
+</body>
+
+</html>
