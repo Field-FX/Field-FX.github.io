@@ -155,8 +155,6 @@
       margin: 0 auto 0;
     }
 
-    
-
     .art {
       /*background-color: #292f36;*/
       background-color: #2d2b55;
@@ -298,6 +296,8 @@
       <h2>Field-FX 2024 - A demoparty in an tent at EMF Camp 2024</h2>
       <p>30th May - 2nd June 2024, Eastnor Park, Ledbury, UK</p>
 
+      <div id="twitch-embed"></div>
+
       <p>
         <a href="http://demoscene-the-art-of-coding.net/the-demoscene/" target="_blank">demoscene</a>, a digital
         <s>frontier</s> arts subculture. And EMF Camp, a festival
@@ -403,6 +403,9 @@
     </article>
   </main>
 
+  <!-- Load the Twitch embed JavaScript file -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
   <script>
     //Articles
     const navSelectors = [
@@ -447,6 +450,16 @@
       partiesSubMenu.classList.toggle("show-dropdown");
     });
   });
+
+  /* Create a Twitch.Embed object that will render within the "twitch-embed" element */
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "monstercat",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
+
 
     /*
 
