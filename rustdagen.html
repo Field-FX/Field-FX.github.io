@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustdagen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .page-container {
+            width: 960px;
+        }
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            height: 100px;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo-image {
+            height: 60px;
+        }
+        .main-navigation {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .main-navigation a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .main-navigation a:hover {
+            color: #cc5500;
+        }
+        .dropdown-menu {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100px;
+        }
+        .dropdown-list li {
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .dropdown-menu:hover .dropdown-list {
+            display: block;
+        }
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 18px;
+            display: inline-block;
+        }
+        .main-content {
+            margin-top: 10px;
+        }
+        .main-title {
+            text-align: center;
+            color: #cc5500;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header class="site-header">
+            <img class="logo-image" data-src="images/logo.png" alt="Field-FX Logo" src="images/logo.png">
+            <nav class="main-navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <div class="dropdown-menu">
+                    <span class="hamburger-menu">☰ Parties</span>
+                    <ul class="dropdown-list">
+                        <li><a href="#2024">2024</a></li>
+                        <li><a href="#2022">2022</a></li>
+                        <li><a href="#2020">2020</a></li>
+                        <li><a href="#2018">2018</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+            <h1 class="main-title">Welcome to Rustdagen!</h1>
+        </main>
+    </div>
+</body>
+</html>
