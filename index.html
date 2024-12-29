@@ -149,10 +149,21 @@
       color: #fff;
     }
 
-    .art p {
+    .art p,
+    td,
+    th {
       font-family: FiraCode, monospace;
       /*color: #929ea9;*/
       color: #fff;
+    }
+
+    th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    td {
+      padding-right: 2em;
     }
 
     .art a {
@@ -233,8 +244,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -10; /* Ensure it's behind all content */
-      pointer-events: none; /* So it doesn't block interactions */
+      z-index: -10;
+      /* Ensure it's behind all content */
+      pointer-events: none;
+      /* So it doesn't block interactions */
     }
 
     .snowflake {
@@ -244,7 +257,147 @@
       text-shadow: 0 0 5px #000;
     }
 
-    .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+    .snowflake,
+    .snowflake .inner {
+      animation-iteration-count: infinite;
+      animation-play-state: running
+    }
+
+    @keyframes snowflakes-fall {
+      0% {
+        transform: translateY(0)
+      }
+
+      100% {
+        transform: translateY(110vh)
+      }
+    }
+
+    @keyframes snowflakes-shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      50% {
+        transform: translateX(80px)
+      }
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10%;
+      z-index: 9999;
+      -webkit-user-select: none;
+      user-select: none;
+      cursor: default;
+      animation-name: snowflakes-shake;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out
+    }
+
+    .snowflake .inner {
+      animation-duration: 10s;
+      animation-name: snowflakes-fall;
+      animation-timing-function: linear
+    }
+
+    .snowflake:nth-of-type(0) {
+      left: 1%;
+      animation-delay: 0s
+    }
+
+    .snowflake:nth-of-type(0) .inner {
+      animation-delay: 0s
+    }
+
+    .snowflake:first-of-type {
+      left: 10%;
+      animation-delay: 1s
+    }
+
+    .snowflake:first-of-type .inner,
+    .snowflake:nth-of-type(8) .inner {
+      animation-delay: 1s
+    }
+
+    .snowflake:nth-of-type(2) {
+      left: 20%;
+      animation-delay: .5s
+    }
+
+    .snowflake:nth-of-type(2) .inner,
+    .snowflake:nth-of-type(6) .inner {
+      animation-delay: 6s
+    }
+
+    .snowflake:nth-of-type(3) {
+      left: 30%;
+      animation-delay: 2s
+    }
+
+    .snowflake:nth-of-type(11) .inner,
+    .snowflake:nth-of-type(3) .inner {
+      animation-delay: 4s
+    }
+
+    .snowflake:nth-of-type(4) {
+      left: 40%;
+      animation-delay: 2s
+    }
+
+    .snowflake:nth-of-type(10) .inner,
+    .snowflake:nth-of-type(4) .inner {
+      animation-delay: 2s
+    }
+
+    .snowflake:nth-of-type(5) {
+      left: 50%;
+      animation-delay: 3s
+    }
+
+    .snowflake:nth-of-type(5) .inner {
+      animation-delay: 8s
+    }
+
+    .snowflake:nth-of-type(6) {
+      left: 60%;
+      animation-delay: 2s
+    }
+
+    .snowflake:nth-of-type(7) {
+      left: 70%;
+      animation-delay: 1s
+    }
+
+    .snowflake:nth-of-type(7) .inner {
+      animation-delay: 2.5s
+    }
+
+    .snowflake:nth-of-type(8) {
+      left: 80%;
+      animation-delay: 0s
+    }
+
+    .snowflake:nth-of-type(9) {
+      left: 90%;
+      animation-delay: 1.5s
+    }
+
+    .snowflake:nth-of-type(9) .inner {
+      animation-delay: 3s
+    }
+
+    .snowflake:nth-of-type(10) {
+      left: 25%;
+      animation-delay: 0s
+    }
+
+    .snowflake:nth-of-type(11) {
+      left: 65%;
+      animation-delay: 2.5s
+    }
 
     /* small screens */
     @media only screen and (max-width: 640px),
@@ -311,120 +464,154 @@
   </div>
   <!-- xmas snow: end -->
 
-<div class="container">
+  <div class="container">
 
-  <div class="nav-container">
-    <nav id="nav" class="nav">
-      <div class="nav_logo">
-        <a href="/">
-          <img class="logo_small" data-src="images/logo_xmas.png" alt="Field-FX Logo" src="images/logo_xmas.png"
-            data-loaded="true" height="100" />
-        </a>
-      </div>
+    <div class="nav-container">
+      <nav id="nav" class="nav">
+        <div class="nav_logo">
+          <a href="/">
+            <img class="logo_small" data-src="images/logo_xmas.png" alt="Field-FX Logo" src="images/logo_xmas.png"
+              data-loaded="true" height="100" />
+          </a>
+        </div>
 
-      <div class="navbar">
-        <ul>
-          <li class="nav_about"><a href="#about">About</a></li>
-          <!--<li class="nav_schedule"><a href="#schedule">Schedule</a></li>
+        <div class="navbar">
+          <ul>
+            <li class="nav_about"><a href="#about">About</a></li>
+            <!--<li class="nav_schedule"><a href="#schedule">Schedule</a></li>
           <li class="nav_compos"><a href="#compos">Compos</a></li>-->
-          <li class="nav_cc"><a href="#cc">CoC</a></li>
-          <li class="nav_contact"><a href="#contact">Contact</a></li>
-          <!--<li class="nav_mnb"><a href="#mnb">Jams</a></li>-->
-        </ul>
-      </div>
-    </nav>
-  </div>
+            <li class="nav_cc"><a href="#cc">CoC</a></li>
+            <li class="nav_contact"><a href="#contact">Contact</a></li>
+            <!--<li class="nav_mnb"><a href="#mnb">Jams</a></li>-->
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-  <main class="main">
-    <article id="about" class="art">
-      <h2>Field-FXmas 2024 - A demoscene stream and showcase on <a href="https://twitch.tv/fieldfxdemo" target="_blank">Twitch</a></h2>
-      <p>Monday 30th December 2024</p>
+    <main class="main">
+      <article id="about" class="art">
+        <h2>Field-FXmas 2024 - A demoscene stream and showcase on <a href="https://twitch.tv/fieldfxdemo"
+            target="_blank">Twitch</a></h2>
+        <p>Monday 30th December 2024</p>
 
-      <p>
-        As we say goodbye to 2024, we would like to invite you all to join us for our apparently annual end-of-year Field-FX stream to celebrate the past year of the demoscene, to cheer you all with fresh demos, creativity and DJ sets, to celebrate our beloved scene family, and to have a good time in the chat. We would like you to feel welcome even if you're not yet a part of the scene, but have a curious or creative mind, so please do join us and have a good time with us on <a href="https://twitch.tv/fieldfxdemo" target="_blank">Twitch</a> on the 30th of December. 
-      </p>
+        <p>
+          As we say goodbye to 2024, we would like to invite you all to join us for our apparently annual end-of-year
+          Field-FX stream to celebrate the past year of the demoscene, to cheer you all with fresh demos, creativity and
+          DJ sets, to celebrate our beloved scene family, and to have a good time in the chat. We would like you to feel
+          welcome even if you're not yet a part of the scene, but have a curious or creative mind, so please do join us
+          and have a good time with us on <a href="https://twitch.tv/fieldfxdemo" target="_blank">Twitch</a> on the 30th
+          of December.
+        </p>
 
-      <p>
-        If you have time and would like to make something, we are accepting demos, animations, art and music for a final end of year showcase.
-      </p>
+        <p>
+          If you have time and would like to make something, we are accepting demos, animations, art and music for a
+          final end of year showcase.
+        </p>
 
-      <p>
-        Whatever your plans, we hope 2024 has been an inspiring year for you, and that you are ready to step into 2025 with positive demoscene spirit in your heart and mind.
-      </p>
+        <p>
+          Whatever your plans, we hope 2024 has been an inspiring year for you, and that you are ready to step into 2025
+          with positive demoscene spirit in your heart and mind.
+        </p>
 
-    </article>
-    <article id="schedule" class="art">
-      <h2>Schedule</h2>
-      <p> Demoshow - A look back on Demos from 2024 </p>
-      <p> Tiny Code Christmas - Recap <p>
-      <p> Showcase - Showcase anything you have made recently </p>
-      <p> Jam </p>
-      <p> Good Bye! </p>
-    </article>
+      </article>
+      <article id="schedule" class="art">
+        <h2>Schedule</h2>
+        <p id="jtzr-ui">Times are presented in UTC/GMT</p>
+        <table data-jtzr-date="2024-12-30">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Event</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jtzr-time">19:00</td>
+              <td>Demoshow - A look back on Demos from 2024</td>
+            </tr>
+            <tr>
+              <td class="jtzr-time">20:00</td>
+              <td>Tiny Code Christmas 2024 recap</td>
+            </tr>
+            <tr>
+              <td class="jtzr-time">20:30</td>
+              <td>Creative Showcase</td>
+            </tr>
+            <tr>
+              <td class="jtzr-time">21:00</td>
+              <td>Bytejam featuring DJ Polynomial</td>
+            </tr>
+            <tr>
+              <td class="jtzr-time">22:00</td>
+              <td>Goodnight</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
 
-    <article id="schedule" class="art">
-      <h2>Showcase</h2>
-      <p> Anything goes. </p>
-      <p> To sumbmit please email fieldfxparty+xmas@gmail.com with a video camputure if possible. </p>
-      <p> Deadline for submission Monday 30th December 2020 at 10am GMT. 
-    </article>
+      <article id="compos" class="art">
+        <h2>Showcase</h2>
+        <p> Anything goes. </p>
+        <p> To sumbmit please email fieldfxparty+xmas@gmail.com with a video camputure if possible. </p>
+        <p> Deadline for submission Monday 30th December 2020 at 10am GMT.
+      </article>
 
-    <article id="cc" class="art">
-      <h2>Code of conduct</h2>
+      <article id="cc" class="art">
+        <h2>Code of conduct</h2>
 
-      <p>
-        We are committed to making Field FX an inclusive and welcoming event.
-        Unfortunately, sometimes harassment happens. While we are present on
-        site at EMF Camp we are all subject to the
-        <a href="https://www.emfcamp.org/code-of-conduct" target="_blank">
-          EMF Camp Code of Conduct</a>
-        and our organisers are invested in supporting it.
-      </p>
-      <p>
-        We will also be extending the same Code of Conduct to our party
-        stream. Moderators will be present in online channels operated by
-        Field FX and their identity will be established by a group message at
-        regular intervals throughout the stream. Tagging them in your message
-        will elicit a response. During a stream we aim to reach a decision on
-        all conduct issues within 10 minutes. Outside of channels operated by
-        us we cannot guarantee support. All reports will be taken seriously
-        and will be considered in confidence by our team.
-      </p>
-    </article>
+        <p>
+          We are committed to making Field FX an inclusive and welcoming event.
+          Unfortunately, sometimes harassment happens. While we are present on
+          site at EMF Camp we are all subject to the
+          <a href="https://www.emfcamp.org/code-of-conduct" target="_blank">
+            EMF Camp Code of Conduct</a>
+          and our organisers are invested in supporting it.
+        </p>
+        <p>
+          We will also be extending the same Code of Conduct to our party
+          stream. Moderators will be present in online channels operated by
+          Field FX and their identity will be established by a group message at
+          regular intervals throughout the stream. Tagging them in your message
+          will elicit a response. During a stream we aim to reach a decision on
+          all conduct issues within 10 minutes. Outside of channels operated by
+          us we cannot guarantee support. All reports will be taken seriously
+          and will be considered in confidence by our team.
+        </p>
+      </article>
 
-    <article id="contact" class="art">
-      <h2>Contact</h2>
-      <p>
-        <b> Email: </b>
-        <a href="mailto: fieldfxparty+2024@gmail.com">fieldfxparty@gmail.com</a>
-      </p>
-      <p>
-        <b> Mastodon: </b>
-        <a rel="me" href="https://mastodon.online/@FieldFX" target="_blank">@FieldFX@mastodon.online</a>
-      </p>
-      <p>
-        <b> Bluesky: </b>
-        <a rel="me" href="https://bsky.app/profile/field-fx.party" target="_blank">@field-fx.party</a>
-      </p>
-      <p>
-        <b> Twitter: </b>
-        <a href="https://twitter.com/fx_field" target="_blank">@fx_field</a>
-      </p>
-      <!-- 
+      <article id="contact" class="art">
+        <h2>Contact</h2>
+        <p>
+          <b> Email: </b>
+          <a href="mailto: fieldfxparty+2024@gmail.com">fieldfxparty@gmail.com</a>
+        </p>
+        <p>
+          <b> Mastodon: </b>
+          <a rel="me" href="https://mastodon.online/@FieldFX" target="_blank">@FieldFX@mastodon.online</a>
+        </p>
+        <p>
+          <b> Bluesky: </b>
+          <a rel="me" href="https://bsky.app/profile/field-fx.party" target="_blank">@field-fx.party</a>
+        </p>
+        <p>
+          <b> Twitter: </b>
+          <a href="https://twitter.com/fx_field" target="_blank">@fx_field</a>
+        </p>
+        <!-- 
 	<p>
           <b> Facebook: </b>
           <a href="https://fb.me/e/3bOFkNP0o" target="_blank">Facebook</a>
        </p> 
        -->
-      <p>
-        <b> Discord: </b>
-        <a href="https://discord.gg/FuabytZxdb" target="_blank">Discord</a>
-      </p>
-    </article>
-  </main>
+        <p>
+          <b> Discord: </b>
+          <a href="https://discord.gg/FuabytZxdb" target="_blank">Discord</a>
+        </p>
+      </article>
+    </main>
 
-<!-- container end -->
-</div>
+    <!-- container end -->
+  </div>
 
   <script>
     //Articles
@@ -438,7 +625,7 @@
     ];
 
     const sections = navSelectors.map((qs) =>
-      document.getElementById(qs.querySelector("a").href.split("#")[1])
+      qs && document.getElementById(qs.querySelector("a").href.split("#")[1])
     );
 
     let navbar_active = navSelectors[0];
@@ -452,6 +639,7 @@
       const foldPosition = document.documentElement.clientHeight / 2;
       for (const sectionI in sections) {
         if (
+          sections[sectionI] &&
           sections[sectionI].getBoundingClientRect().bottom > foldPosition
         ) {
           toggleActive(navSelectors[sectionI]);
@@ -475,6 +663,15 @@
     }
     
     */
+  </script>
+  <script async defer src="scripts/jtruk-timezoner.js"></script>
+
+  <script defer>
+    window.onload = () => {
+      jtzrInit({
+        eventUTC: 0
+      });
+    }
   </script>
 </body>
 
