@@ -239,7 +239,6 @@
 
     /* xmas */
     .snowflakes {
-	  display: none; 
       position: fixed;
       top: 0;
       left: 0;
@@ -252,7 +251,6 @@
     }
 
     .snowflake {
-	  display: none; 
       color: #fff;
       font-size: 1em;
       font-family: Arial, sans-serif;
@@ -608,6 +606,17 @@
   </div>
 
   <script>
+
+	const weatherSymbols = [ "🌧","🌧","🌧","🌧","☁","☁","☁","⛈","🌩","☂",];
+    function randomiseWeather() {
+      document.querySelectorAll(".snowflake .inner").forEach(el => {
+        const randomSymbol = weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)];
+        el.textContent = randomSymbol;
+      });
+    }
+    randomiseWeather();
+    setInterval(randomiseWeather, 3000); 
+	  
     //Articles
     const navSelectors = [
       document.querySelector(".nav_about"),
