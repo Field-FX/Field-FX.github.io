@@ -478,8 +478,8 @@
         <div class="navbar">
           <ul>
             <li class="nav_about"><a href="#about">About</a></li>
-            <!--<li class="nav_schedule"><a href="#schedule">Schedule</a></li>
-          <li class="nav_compos"><a href="#compos">Compos</a></li>-->
+            <!--<li class="nav_schedule"><a href="#schedule">Schedule</a></li>-->
+            <li class="nav_compos"><a href="#compos">Compos</a></li>
             <li class="nav_cc"><a href="#cc">CoC</a></li>
             <li class="nav_contact"><a href="#contact">Contact</a></li>
             <!--<li class="nav_mnb"><a href="#mnb">Jams</a></li>-->
@@ -607,14 +607,18 @@
   <script>
 
 	const weatherSymbols = [ "🌧","🌧","🌧","🌧","☁","☁","☁","⛈","🌩","☂",];
-    function randomiseWeather() {
-      document.querySelectorAll(".snowflake .inner").forEach(el => {
-        const randomSymbol = weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)];
-        el.textContent = randomSymbol;
-      });
-    }
-    randomiseWeather();
-    setInterval(randomiseWeather, 3000); 
+
+  document.querySelectorAll(".snowflake .inner").forEach(el => {
+
+    el.textContent =
+      weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)];
+
+    el.addEventListener("animationiteration", () => {
+      el.textContent =
+      weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)];
+    });
+
+  });
 	  
     //Articles
     const navSelectors = [
